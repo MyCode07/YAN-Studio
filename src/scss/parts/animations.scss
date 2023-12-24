@@ -1,0 +1,48 @@
+[data-y-top] {
+    transform: translate(0, -50px);
+    opacity: 0;
+}
+
+[data-y-bottom] {
+    transform: translate(0, 50px);
+    opacity: 0;
+}
+
+[data-x-left] {
+    transform: translate(-50px, 0);
+    opacity: 0;
+}
+
+[data-x-right] {
+    transform: translate(50px, 0);
+    opacity: 0;
+}
+
+[data-opacity-only] {
+    opacity: 0;
+}
+
+.menu {
+    #logo {
+        transform: translate3D(0, -50px, 0);
+        transition: transform 1s ease 0s;
+        will-change: transform;
+    }
+
+    li,
+    .dropdown__btn,
+    .menu__contacts a {
+        transform: translate3D(0, 50px, 0);
+        transition: transform 1s ease 0s;
+        will-change: transform;
+    }
+
+    &._active {
+        #logo,
+        li,
+        .dropdown__btn,
+        .menu__contacts a {
+            transform: translate3D(0, 0, 0);
+        }
+    }
+}

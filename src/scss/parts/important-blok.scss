@@ -1,0 +1,50 @@
+.important__blok {
+    @include adaptive-value("margin-bottom", 100, 50, 1);
+    @include adaptive-value("margin-top", -100, -50, 1);
+    @include adaptive-value("padding-top", 120, 50, 1);
+    @include adaptive-value("padding-bottom", 120, 50, 1);
+
+    position: relative;
+
+    // .important__blok-container
+
+    &-container {
+    }
+
+    // .important__blok-body
+
+    &-body {
+        @media (min-width: 1025px) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    p {
+        font-style: normal;
+        font-weight: 300;
+        @include adaptive-value("font-size", 32, 15, 1);
+        line-height: 150%;
+        color: #fff;
+        max-width: 55%;
+        width: 100%;
+        text-transform: uppercase;
+
+        @media (max-width: 1024px) {
+            margin-bottom: 40px;
+            align-self: start;
+            max-width: calc(100% - 200px);
+        }
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
+    }
+
+    ._button-liquid {
+        @media (max-width: 1024px) {
+            margin-left: auto;
+        }
+    }
+}

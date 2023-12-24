@@ -1,0 +1,110 @@
+.process {
+    // .process-button
+
+    &__button {
+        background-color: #fff;
+
+        a {
+            color: #fff;
+        }
+    }
+
+    // .process__container
+
+    &__container {
+    }
+
+    // .process__body
+
+    &__body {
+    }
+
+   
+    // .process__slider
+
+    &__slider {
+        // .process__slider-buttons
+
+        &-buttons {
+        }
+    }
+
+    // .process__slide
+
+    &__slide {
+        height: 100%;
+        position: relative;
+
+        label {
+            font-family: "Anonymous Pro";
+            font-style: normal;
+            font-weight: 700;
+            @include adaptive-value("font-size", 14, 10, 1);
+            line-height: 120%;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #fff;
+            text-align: center;
+
+            @include adaptive-value("width", 50, 25, 1);
+            @include adaptive-value("height", 50, 25, 1);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            padding-left: 2px;
+
+            &:before {
+                position: absolute;
+                content: "";
+                @include adaptive-value("top", 50, 25, 1);
+                width: 1px;
+                height: 100%;
+                background-color: #fff;
+            }
+        }
+
+        // .process__slide-info
+
+        &-info {
+            height: 100%;
+            @include adaptive-value("padding-top", 50, 20, 1);
+            @include adaptive-value("padding-left", 50, 20, 1);
+            @include adaptive-value("padding-bottom", 20, 10, 1);
+
+
+            h3 {
+                white-space: nowrap;
+                font-style: normal;
+                line-height: 120%;
+                letter-spacing: 0.05em;
+                color: #fff;
+
+                display: block;
+                @include adaptive-value("font-size", 30, 16, 1);
+                @include adaptive-value("margin-bottom", 20, 10, 1);
+
+                @media (max-width: 1024px) {
+                    font-weight: 500;
+                }
+            }
+
+            p {
+                font-style: normal;
+                font-weight: 300;
+                line-height: 120%;
+                color: #fff;
+                @include adaptive-value("font-size", 18, 14, 1);
+                max-width: 450px;
+                
+                @media (max-width: 768px) {
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

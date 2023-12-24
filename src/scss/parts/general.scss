@@ -1,0 +1,344 @@
+.creating {
+    // .creating__services
+
+    &__services {
+        // .creating__services-container
+
+        &-container {
+        }
+
+        // .creating__services-body
+
+        &-body {
+            h2 {
+                @include adaptive-value("margin-bottom", 50, 30, 1);
+            }
+        }
+
+        // .creating__services-flex
+
+        &-flex {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+
+            @media (max-width: 1200px) {
+                gap: 30px;
+            }
+
+            @media (max-width: 1024px) {
+                flex-wrap: wrap;
+                row-gap: 50px;
+            }
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+
+        // .creating__services-item
+
+        &-item {
+            position: relative;
+            border-left: 1px solid #fff;
+
+            @media (max-width: 1024px) {
+                max-width: 45%;
+                width: 100%;
+            }
+
+            @media (max-width: 768px) {
+                max-width: fit-content;
+                width: 100%;
+            }
+
+            label {
+                position: absolute;
+                left: 0;
+                top: 0;
+
+                padding: 5px;
+                font-family: "Anonymous Pro";
+                font-style: normal;
+                font-weight: 700;
+                @include adaptive-value("font-size", 14, 12, 1);
+                line-height: 120%;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: #fff;
+                opacity: 0.5;
+            }
+
+            & > :first-child {
+                @media (max-width: 1024px) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            a {
+                max-width: 166px;
+                width: 100%;
+                font-style: normal;
+                font-weight: 300;
+                @include adaptive-value("font-size", 18, 12, 1);
+                line-height: 1.1;
+                display: flex;
+                align-items: center;
+                letter-spacing: 0.1em;
+                text-transform: capitalize;
+                color: #fff;
+
+                @media (max-width: 1024px) {
+                    justify-content: space-between;
+                    width: fit-content;
+                    max-width: none;
+                }
+
+                @media (any-hover: hover) {
+                    &:hover {
+                        .v-1 {
+                            transform: translate(0, 0);
+                        }
+                        .v-2 {
+                            transform: translate(0, 200%);
+                        }
+                    }
+                }
+
+                svg {
+                    width: 1em;
+                    height: 1em;
+                    @include adaptive-value("margin-left", 40, 20, 1);
+                    transform: rotate(-90deg);
+
+                    .v-1 {
+                        transform: translate(0, -200%);
+                    }
+                    .v-2 {
+                    }
+                }
+            }
+        }
+
+        // .creating__services-info
+
+        &-info {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            @include adaptive-value("padding-top", 50, 20, 1);
+            @include adaptive-value("padding-left", 50, 20, 1);
+
+            h3 {
+                white-space: nowrap;
+                font-style: normal;
+                line-height: 120%;
+                letter-spacing: 0.05em;
+                color: #fff;
+
+                height: 1.5em;
+                display: block;
+                @include adaptive-value("font-size", 30, 16, 1);
+                @include adaptive-value("margin-bottom", 30, 15, 1);
+
+                @media (max-width: 1024px) {
+                }
+            }
+
+            p {
+                flex: 1 1 auto;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 120%;
+                color: #fff;
+                @include adaptive-value("font-size", 18, 14, 1);
+                margin-bottom: 4em;
+                max-width: 555px;
+                width: 100%;
+
+                @media (max-width: 1200px) {
+                    max-width: 400px;
+                }
+
+                @media (max-width: 1024px) {
+                    font-weight: 300;
+                    margin-bottom: 2em;
+                }
+
+                @media (max-width: 768px) {
+                    margin-bottom: 30px;
+
+                    br {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ticker {
+    // .ticker__creating
+
+    &__creating {
+        @include adaptive-value("margin-bottom", 200, 100, 1);
+        @include adaptive-value("margin-top", -100, -50, 1);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // .ticker__creating-text
+
+        &-text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+
+            letter-spacing: 0.1em;
+            text-transform: capitalize;
+            color: #fff;
+
+            span {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                border: 1px solid #fff;
+                border-radius: 20px;
+                padding: 5px 20px;
+                margin: 0 40px;
+            }
+        }
+    }
+}
+
+.general {
+    // .general__container
+
+    &__container {
+    }
+
+    // .general__body
+
+    &__body {
+        h2 {
+            position: sticky;
+            top: 70px;
+
+            @media (max-width: 1024px) {
+                position: static;
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    // .general__flex
+
+    &__flex {
+        margin-left: auto;
+        width: 50%;
+        overflow: hidden;
+
+        @media (min-width: 1025px) {
+            @include adaptive-value("padding-left", 100, 50, 1);
+        }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            margin-left: 0;
+        }
+
+        & > :not(:last-child) {
+            @include adaptive-value("margin-bottom", 100, 50, 1);
+        }
+
+        // .general__flex-item
+
+        &-item {
+            border-bottom: 1px solid #fff;
+        }
+
+        // .general__flex-info
+
+        &-info {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+
+            label {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+                line-height: 1;
+                font-family: "Anonymous Pro";
+                font-style: normal;
+                font-weight: 700;
+                @include adaptive-value("font-size", 14, 12, 1);
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: #fff;
+                opacity: 0.5;
+                border: 1px solid #fff;
+                border-radius: 20px;
+                @include adaptive-value("width", 50, 40, 1);
+                padding-left: 2px;
+                @include adaptive-value("margin-bottom", 50, 15, 1);
+            }
+
+            h3 {
+                white-space: nowrap;
+                font-style: normal;
+                line-height: 120%;
+                letter-spacing: 0.05em;
+                color: #fff;
+                display: block;
+                @include adaptive-value("font-size", 30, 16, 1);
+                @include adaptive-value("margin-bottom", 20, 10, 1);
+
+                @media (max-width: 1024px) {
+                }
+            }
+
+            p {
+                flex: 1 1 auto;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 120%;
+                color: #fff;
+                @include adaptive-value("font-size", 18, 14, 1);
+                margin-bottom: 1em;
+
+                @media (max-width: 1024px) {
+                    font-weight: 300;
+                }
+
+                @media (max-width: 992px) {
+                    max-width: 80%;
+                    width: 100%;
+                }
+
+                @media (max-width: 768px) {
+                    br {
+                        display: none;
+                    }
+                }
+
+                @media (max-width: 425px) {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+   
+}
