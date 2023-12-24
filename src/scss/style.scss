@@ -4,6 +4,9 @@
 // load fonts
 @import "fonts";
 
+//load variables
+@import "common/variables";
+
 // load mixins
 @import "mixins";
 
@@ -11,64 +14,39 @@
 @import "../../node_modules/swiper/swiper";
 
 // load common
-@import "common";
+@import "common/common";
 
 // load header
-@import "parts/header";
-
-// load menu
-@import "parts/menu";
-
-// load form
-@import "parts/form";
-
-// load services
-@import "parts/important-blok";
-
-// load contacts-socialmedia
-@import "parts/contacts-socialmedia";
-
-// load menu
-@import "parts/home";
-
-// load about
-@import "parts/about";
-
-// load services
-@import "parts/services";
-
-// load portfolio
-@import "parts/portfolio";
-
-// load process
-@import "parts/process";
-
-// load advantages
-@import "parts/advantages";
-
-// load contacts
-@import "parts/contacts";
+@import "common/header";
 
 // load footer
-@import "parts/footer";
+@import "common/footer";
 
-// load general
-@import "parts/general";
+// load side fixed
+@import "common/side-fixed";
 
-// load contact-page
-@import "parts/contact-page";
+// load footer
+@import "common/menu";
 
-// load brief
-@import "parts/brief";
-
-// load privacy-policy
-@import "parts/privacy-policy";
-
-// load popup-form
-@import "parts/popup-form";
+// load accordeon
+@import "common/accordeon";
 
 // load error 404
-@import "parts/404";
+@import "common/404";
+
+// load to top
+@import "common/to-top";
+
+// load ticker
+@import "common/ticker";
 
 // load animations
-@import "parts/animations";
+@import "common/animations";
+
+// load hero
+@import "parts/hero";
+
+// load section
+@import "parts/section";
+
+ 

@@ -1,9 +1,35 @@
 @font-face {
-	font-family: Anonymous Pro;
+	font-family: Arial;
 	font-display: swap;
-	src: url("../fonts/AnonymousPro-Bold.woff2") format("woff2"), url("../fonts/AnonymousPro-Bold.woff") format("woff");
+	src: url("../fonts/Arial-bold.woff2") format("woff2"), url("../fonts/Arial-bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 }
-
-// @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap");
+@font-face {
+	font-family: Arial;
+	font-display: swap;
+	src: url("../fonts/Arial-regular.woff2") format("woff2"), url("../fonts/Arial-regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Inter;
+	font-display: swap;
+	src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: SuisseIntl;
+	font-display: swap;
+	src: url("../fonts/SuisseIntl-Light.woff2") format("woff2"), url("../fonts/SuisseIntl-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: Inter;
+	font-display: swap;
+	src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}

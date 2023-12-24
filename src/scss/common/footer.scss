@@ -1,0 +1,222 @@
+.footer {
+    padding-bottom: 15px;
+
+    @media (max-width: 768px) {
+        padding-bottom: 150px;
+    }
+
+    // .footer__container
+
+    &__container {
+    }
+
+    // .footer__body
+
+    &__body {
+    }
+
+    // .footer__logo
+
+    &__logo {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        height: fit-content;
+        svg {
+            display: block;
+            width: 100%;
+            fill: #000;
+            height: fit-content;
+
+            path {
+                transform: translate(0, -150%);
+            }
+        }
+    }
+
+    // .footer__content
+
+    &__content {
+        margin-bottom: 50px;
+        margin-top: 50px;
+
+        display: flex;
+        justify-content: space-between;
+        color: #000;
+        font-family: RobotoMono;
+
+        @media (max-width: 1200px) {
+            display: block;
+        }
+
+        ._underline {
+            text-align: left;
+            width: fit-content;
+            white-space: nowrap;
+
+            @media (max-width: 1024px) {
+                white-space: wrap;
+            }
+
+            &:after {
+                background-color: #000;
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+
+        & > :not(:last-child) {
+            @include adaptive-value("margin-right", 75, 20, 1);
+
+            @media (max-width: 992px) {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 992px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto;
+            gap: 30px 10px;
+        }
+
+        @media (max-width: 725px) {
+            display: block;
+            & > :not(:last-child) {
+                margin-bottom: 30px;
+            }
+
+            & > :nth-child(6),
+            & > :nth-child(5),
+            & > :nth-child(4) {
+                text-align: right;
+            }
+        }
+
+        ul {
+            label {
+                display: block;
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 16px;
+                margin-bottom: 20px;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            & > :not(:last-child) :not(label) {
+                margin-bottom: 10px;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 5px;
+                }
+            }
+
+            li {
+                line-height: 14px;
+
+                a {
+                    display: inline-block;
+                    font-size: 14px;
+                    line-height: 14px;
+                    max-width: 160px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    // .footer__info
+
+    &__info {
+        max-width: 340px;
+        width: 100%;
+        margin-right: auto;
+
+        @media (max-width: 1200px) {
+            margin: 0 0 70px 0;
+            max-width: 50%;
+        }
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
+
+        // .footer__info-box
+
+        &-box {
+            display: flex;
+            flex-direction: column;
+
+            h5 {
+            }
+            p {
+                font-size: 14px;
+                line-height: 16px;
+                margin: 20px 0 15px 0;
+            }
+            a {
+            }
+        }
+    }
+
+    // .footer__bottom
+
+    &__bottom {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        @media (max-width: 992px) {
+            flex-direction: column-reverse;
+        }
+
+        ._small-text {
+            color: #727272;
+            margin-right: 50px;
+
+            @media (max-width: 992px) {
+                width: 100%;
+                margin-right: 0;
+                margin-top: 30px;
+            }
+        }
+
+        ol {
+            display: flex;
+            align-items: center;
+
+            @media (max-width: 992px) {
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            & > :not(:last-child) {
+                @include adaptive-value("margin-right", 40, 20, 1);
+
+                @media (max-width: 992px) {
+                    margin-right: 0;
+                }
+            }
+
+            li {
+                a {
+                    img {
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+._underline_button {
+}

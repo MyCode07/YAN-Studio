@@ -1,0 +1,37 @@
+.hero {
+    background-color: $black;
+    padding-bottom: 16px;
+    
+    // .hero__container
+
+    &__container {
+    }
+
+    // .hero__body
+
+    &__body {
+        padding: 150px 0;
+    }
+
+    // .hero__content
+
+    &__content {
+        grid-column-start: 3;
+        grid-column-end: span 4;
+
+        p {
+            max-width: 320px;
+            width: 100%;
+            margin: 40px 0 80px 0;
+            color: $white;
+
+            @media (max-width: 1024px) {
+                margin: 30px 0 60px 0;
+            }
+
+            @media (max-width: 768px) {
+                margin: 60px 0 30px 0;
+            }
+        }
+    }
+}

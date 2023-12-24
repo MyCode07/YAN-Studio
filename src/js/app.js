@@ -1,17 +1,21 @@
+// import "./static/side-fixed.js";
+// import { accorden } from "./static/accordeon.js";
+// import { maskInputs } from "./static/inputmask.js";
+// import { runTicker } from "./static/ticker.js";
+// import { replaceDomElements } from "./static/replace.js";
+// import { toTop } from "./static/to-top.js";
+// import { stickyHeader } from "./parts/header.js";
 // import './utils/smoothscrol.js';
-import './utils/menu.js';
-import './utils/liquid-btn.js';
-import './utils/animations.js';
 
-import './utils/sliders.js';
-import './utils/portfolio-info.js';
-import './utils/mouse.js';
-import './utils/ticker.js';
-import './utils/to-top.js';
-import './utils/brief.js';
-import './utils/privacy-tabs.js';
-import './utils/popup-form.js';
-import './utils/inputmask.js';
-import './utils/forms.js';
-import './utils/empty-height.js';
- 
+import { animateStaggerAction } from "./parts/animations.js";
+
+animateStaggerAction();
+// stickyHeader()
+// toTop();
+// replaceDomElements();
+// runTicker()
+// accorden();
+// maskInputs('+7 999 999 999 999', '.phone')
+
+import "./parts/header.js";
+import "./parts/menu.js";

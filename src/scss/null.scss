@@ -4,6 +4,8 @@
     padding: 0;
     margin: 0;
     border: 0;
+    color: inherit;
+    font-size: inherit;
 }
 
 *,
@@ -53,6 +55,7 @@ input::-ms-clear {
 }
 
 button {
+    display: block;
     cursor: pointer;
 }
 
@@ -61,11 +64,11 @@ button::-moz-focus-inner {
     border: 0;
 }
 
-a,
-a:visited {
-    text-decoration: none;
+a {
 }
 
+a,
+a:visited,
 a:hover {
     text-decoration: none;
 }
@@ -82,8 +85,5 @@ h3,
 h4,
 h5,
 h6 {
-    font-size: inherit;
     font-weight: 400;
 }
-
-
