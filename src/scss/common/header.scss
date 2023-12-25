@@ -76,6 +76,8 @@
             }
 
             li {
+                transition: opacity 0.3s ease 0s;
+
                 @media (any-hover: hover) {
                     &:hover {
                         opacity: 0.5;
@@ -85,6 +87,7 @@
                 a {
                     font-size: 14px;
                     white-space: nowrap;
+                    font-weight: 300;
                 }
             }
         }

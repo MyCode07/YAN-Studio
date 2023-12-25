@@ -6,6 +6,27 @@
 	font-style: normal;
 }
 @font-face {
+	font-family: Inter;
+	font-display: swap;
+	src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: Inter;
+	font-display: swap;
+	src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: JetBrainsMono;
+	font-display: swap;
+	src: url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"), url("../fonts/JetBrainsMono-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
 	font-family: Arial;
 	font-display: swap;
 	src: url("../fonts/Arial-regular.woff2") format("woff2"), url("../fonts/Arial-regular.woff") format("woff");
@@ -13,10 +34,10 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Inter;
+	font-family: JetBrainsMono;
 	font-display: swap;
-	src: url("../fonts/Inter-Light.woff2") format("woff2"), url("../fonts/Inter-Light.woff") format("woff");
-	font-weight: 300;
+	src: url("../fonts/JetBrainsMono-Medium.woff2") format("woff2"), url("../fonts/JetBrainsMono-Medium.woff") format("woff");
+	font-weight: 500;
 	font-style: normal;
 }
 @font-face {
@@ -27,9 +48,16 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Inter;
+	font-family: JetBrainsMono;
 	font-display: swap;
-	src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+	src: url("../fonts/JetBrainsMono-Bold.woff2") format("woff2"), url("../fonts/JetBrainsMono-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+@font-face {
+	font-family: SuisseIntl;
+	font-display: swap;
+	src: url("../fonts/SuisseIntl-Regular.woff2") format("woff2"), url("../fonts/SuisseIntl-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }

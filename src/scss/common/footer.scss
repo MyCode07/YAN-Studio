@@ -1,18 +1,79 @@
 .footer {
-    padding-bottom: 15px;
-
-    @media (max-width: 768px) {
-        padding-bottom: 150px;
-    }
+    height: 80vh;
 
     // .footer__container
 
     &__container {
+        height: 100%;
     }
 
     // .footer__body
 
     &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        gap: 50px;
+    }
+
+    // .footer__content
+
+    &__content {
+        button {
+            height: fit-content;
+            width: fit-content;
+            grid-column: span 2;
+            white-space: nowrap;
+            font-family: Arial;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            @include adaptive-value("font-size", 66, 24, 1);
+
+            @media (max-width: 992px) {
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    // .footer__contacts
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            width: fit-content;
+            white-space: nowrap;
+            display: block;
+            opacity: 0.5;
+            transition: opacity 0.3s ease 0s;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+            padding-bottom: 2px;
+            
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        div {
+            margin-bottom: 100px;
+
+            @media (max-width: 992px) {
+                margin-bottom: 20px;
+            }
+
+            a {
+                opacity: 1;
+            }
+        }
     }
 
     // .footer__logo
@@ -22,201 +83,50 @@
         display: flex;
         align-items: flex-end;
         height: fit-content;
+
         svg {
             display: block;
             width: 100%;
-            fill: #000;
             height: fit-content;
 
             path {
-                transform: translate(0, -150%);
+                fill: $black;
+                transform: translate(0, 150%);
             }
         }
     }
 
-    // .footer__content
+    ._social-buttons {
+        height: fit-content;
 
-    &__content {
-        margin-bottom: 50px;
-        margin-top: 50px;
-
-        display: flex;
-        justify-content: space-between;
-        color: #000;
-        font-family: RobotoMono;
-
-        @media (max-width: 1200px) {
-            display: block;
-        }
-
-        ._underline {
-            text-align: left;
-            width: fit-content;
-            white-space: nowrap;
-
-            @media (max-width: 1024px) {
-                white-space: wrap;
-            }
-
-            &:after {
-                background-color: #000;
-            }
-        }
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-
-        & > :not(:last-child) {
-            @include adaptive-value("margin-right", 75, 20, 1);
-
-            @media (max-width: 992px) {
-                margin: 0;
-            }
+        @media (min-width: 993px) {
+            margin-left: auto;
         }
 
         @media (max-width: 992px) {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto;
-            gap: 30px 10px;
+            margin-bottom: 50px;
         }
 
-        @media (max-width: 725px) {
+        .back {
+            fill: $black;
+        }
+
+        .icon {
+            fill: $white;
+            transition: transform 0.3s ease 0s;
+        }
+
+        a {
+            width: 40px;
+            height: 40px;
             display: block;
-            & > :not(:last-child) {
-                margin-bottom: 30px;
-            }
+            transition: opacity 0.3s ease 0s;
 
-            & > :nth-child(6),
-            & > :nth-child(5),
-            & > :nth-child(4) {
-                text-align: right;
-            }
-        }
-
-        ul {
-            label {
-                display: block;
-                font-size: 16px;
-                font-weight: 700;
-                line-height: 16px;
-                margin-bottom: 20px;
-
-                @media (max-width: 768px) {
-                    margin-bottom: 10px;
-                }
-            }
-
-            & > :not(:last-child) :not(label) {
-                margin-bottom: 10px;
-
-                @media (max-width: 768px) {
-                    margin-bottom: 5px;
-                }
-            }
-
-            li {
-                line-height: 14px;
-
-                a {
-                    display: inline-block;
-                    font-size: 14px;
-                    line-height: 14px;
-                    max-width: 160px;
-                    width: 100%;
+            @media (any-hover: hover) {
+                &:hover {
+                    opacity: 0.5;
                 }
             }
         }
     }
-
-    // .footer__info
-
-    &__info {
-        max-width: 340px;
-        width: 100%;
-        margin-right: auto;
-
-        @media (max-width: 1200px) {
-            margin: 0 0 70px 0;
-            max-width: 50%;
-        }
-
-        @media (max-width: 768px) {
-            max-width: 100%;
-        }
-
-        // .footer__info-box
-
-        &-box {
-            display: flex;
-            flex-direction: column;
-
-            h5 {
-            }
-            p {
-                font-size: 14px;
-                line-height: 16px;
-                margin: 20px 0 15px 0;
-            }
-            a {
-            }
-        }
-    }
-
-    // .footer__bottom
-
-    &__bottom {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        @media (max-width: 992px) {
-            flex-direction: column-reverse;
-        }
-
-        ._small-text {
-            color: #727272;
-            margin-right: 50px;
-
-            @media (max-width: 992px) {
-                width: 100%;
-                margin-right: 0;
-                margin-top: 30px;
-            }
-        }
-
-        ol {
-            display: flex;
-            align-items: center;
-
-            @media (max-width: 992px) {
-                width: 100%;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 10px;
-            }
-
-            & > :not(:last-child) {
-                @include adaptive-value("margin-right", 40, 20, 1);
-
-                @media (max-width: 992px) {
-                    margin-right: 0;
-                }
-            }
-
-            li {
-                a {
-                    img {
-                        height: 40px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-._underline_button {
 }

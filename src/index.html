@@ -7,19 +7,351 @@
 @@include('./html/header.html')
 
 <main>
+
     <section class="hero">
         <div class="hero__container _container">
-            <div class="hero__body main-grid">
+            <div class="hero__body grid grid-4">
                 <div class="hero__content">
-                    <h1>РАЗРАБОТКА / дизайн / продвижение. </h1>
-                    <p>Специализируемся на предоставлении эффективных решений, адаптированных к уникальным потребностям
+                    <h1 data-animate-stagger data-animate-bottom>Разработка / дизайн / продвижение. </h1>
+                    <p data-animate-stagger data-animate-bottom>Специализируемся на <br> предоставлении эффективных <br>
+                        решений, адаптированных к <br>
+                        уникальным потребностям
                         проекта</p>
-                    <button class="_btn _btn-white"><label>Обсудить проект</label> <span></span></button>
+                    <button class="_btn _btn-white" data-animate-stagger data-animate-bottom><label>Обсудить
+                            проект</label>
+                        <span></span></button>
                 </div>
             </div>
-            <span class="big-text">Мы — студия разработки сайтов с полным спектром услуг.</span>
+            <span class="big-text" data-animate-stagger data-animate-bottom>Мы — студия разработки сайтов с полным
+                спектром
+                услуг.</span>
         </div>
     </section>
+
+    <section class="section about" data-replace-width="992">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__content" data-replace-new-position="afterend">
+                    <div class="section__top grid grid-2" data-replace-old-position="beforeend" data-animate-stagger
+                        data-animate-bottom>
+                        <h2>Студия</h2>
+                        <a href="" class="_link-btn _underline" data-replace-element>
+                            <div>
+                                <span><i>О</i> <i>н</i><i>а</i><i>с</i></span>
+                                <span><i>О</i>
+                                    <i>н</i><i>а</i><i>с</i></span>
+                            </div>
+
+                            <svg width="12" height="4">
+                                <use xlink:href="@img/svg/icons.svg#link-arrow"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="section__bottom grid grid-2">
+                        <div data-animate-stagger data-animate-bottom>
+                            <p>Создаём уникальные сайты, которые полностью выполняют поставленные задачи.
+                            </p>
+                            <p>Индивидуальные решения веб-дизайна и разработки для малых и средних предприятий, которым
+                                нужен функциональный и
+                                привлекательный сайт для привлечения потенциальных клиентов.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section portfolio" data-replace-width="992">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__content" data-replace-new-position="afterend">
+                    <div class="section__top grid grid-2" data-replace-old-position="beforeend" data-animate-stagger
+                        data-animate-bottom>
+                        <h2>Портфолио</h2>
+                        <a href="" class="_link-btn _underline" data-replace-element>
+                            <div>
+                                <span><i>В</i><i>с</i><i>е</i> <i>р</i><i>а</i><i>б</i><i>о</i><i>т</i><i>ы</i></span>
+                                <span><i>В</i><i>с</i><i>е</i> <i>р</i><i>а</i><i>б</i><i>о</i><i>т</i><i>ы</i></span>
+                            </div>
+                            <svg width="12" height="4">
+                                <use xlink:href="@img/svg/icons.svg#link-arrow"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="section__bottom grid grid-2">
+                        <a href="" class="protfolio-card _underline" data-animate-stagger data-animate-bottom>
+                            <div class="protfolio-card__img">
+                                <img src="img/portfolio/portfolio-1.png" alt="">
+                            </div>
+                            <div class="protfolio-card__info">
+                                <h3>ORIGAMI</h3>
+                                <p>Свежий и вкусный японский чай ORIGAMI <br> лучшая альтернатива кофе.</p>
+                                <ol class=" grid grid-2">
+                                    <li>разработка</li>
+                                    <li>2022</li>
+                                </ol>
+                            </div>
+                        </a>
+                        <a href="" class="protfolio-card _underline" data-animate-stagger data-animate-bottom>
+                            <div class="protfolio-card__img">
+                                <img src="img/portfolio/portfolio-1.png" alt="">
+                            </div>
+                            <div class="protfolio-card__info">
+                                <h3>ORIGAMI</h3>
+                                <p>Свежий и вкусный японский чай ORIGAMI <br> лучшая альтернатива кофе.</p>
+                                <ol class=" grid grid-2">
+                                    <li>разработка</li>
+                                    <li>2022</li>
+                                </ol>
+                            </div>
+                        </a>
+                        <a href="" class="protfolio-card _underline" data-animate-stagger data-animate-bottom>
+                            <div class="protfolio-card__img">
+                                <img src="img/portfolio/portfolio-1.png" alt="">
+                            </div>
+                            <div class="protfolio-card__info">
+                                <h3>ORIGAMI</h3>
+                                <p>Свежий и вкусный японский чай ORIGAMI <br> лучшая альтернатива кофе.</p>
+                                <ol class=" grid grid-2">
+                                    <li>разработка</li>
+                                    <li>2022</li>
+                                </ol>
+                            </div>
+                        </a>
+                        <a href="" class="protfolio-card _underline" data-animate-stagger data-animate-bottom>
+                            <div class="protfolio-card__img">
+                                <img src="img/portfolio/portfolio-1.png" alt="">
+                            </div>
+                            <div class="protfolio-card__info">
+                                <h3>ORIGAMI</h3>
+                                <p>Свежий и вкусный японский чай ORIGAMI <br> лучшая альтернатива кофе.</p>
+                                <ol class=" grid grid-2">
+                                    <li>разработка</li>
+                                    <li>2022</li>
+                                </ol>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section services">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__content">
+                    <div class="section__top" data-animate-stagger data-animate-bottom>
+                        <h2>Услуги</h2>
+                    </div>
+                    <div class="section__bottom">
+                        <article class="grid grid-4 service-card" data-animate-stagger data-animate-bottom>
+                            <div class="service-card__numb">/ 01</div>
+                            <div class="service-card__price">
+                                <div>
+                                    <label>Стоимость: </label>
+                                    <span>oт 60.000 ₽</span>
+                                </div>
+                                <div>
+                                    <label>Срок:</label>
+                                    <span>Срок oт 7 дней</span>
+                                </div>
+                            </div>
+                            <div class="service-card__info">
+                                <h4>Одностраничный сайт</h4>
+                                <div class="service-card__price">
+                                    <div>
+                                        <label>Стоимость: </label>
+                                        <span>oт 60.000 ₽</span>
+                                    </div>
+                                    <div>
+                                        <label>Срок:</label>
+                                        <span>Срок oт 7 дней</span>
+                                    </div>
+                                </div>
+                                <p>Одностраничный сайт с индивидуальным дизайном
+                                    и уникальными торговыми предложениями
+                                    для
+                                    привлечения клиентов в ваш бизнес.</p>
+                                <button class="_btn _btn-dark"><label>Обсудить проект</label> <span></span></button>
+
+                            </div>
+                        </article>
+
+                        <article class="grid grid-4 service-card" data-animate-stagger data-animate-bottom>
+                            <div class="service-card__numb">/ 01</div>
+                            <div class="service-card__price">
+                                <div>
+                                    <label>Стоимость: </label>
+                                    <span>oт 250.000 ₽</span>
+                                </div>
+                                <div>
+                                    <label>Срок:</label>
+                                    <span>Срок oт 14 дней</span>
+                                </div>
+                            </div>
+                            <div class="service-card__info">
+                                <h4>Корпоративный сайт</h4>
+                                <div class="service-card__price">
+                                    <div>
+                                        <label>Стоимость: </label>
+                                        <span>oт 60.000 ₽</span>
+                                    </div>
+                                    <div>
+                                        <label>Срок:</label>
+                                        <span>Срок oт 7 дней</span>
+                                    </div>
+                                </div>
+                                <p>Сайт о компании/организации, предоставляющей актуальную информацию о компании и ее
+                                    услугах в строгом соответствии имиджу
+                                    компании.</p>
+                                <button class="_btn _btn-dark"><label>Обсудить проект</label> <span></span></button>
+
+                            </div>
+                        </article>
+
+                        <article class="grid grid-4 service-card" data-animate-stagger data-animate-bottom>
+                            <div class="service-card__numb">/ 01</div>
+                            <div class="service-card__price">
+                                <div>
+                                    <label>Стоимость: </label>
+                                    <span>oт 400.000 ₽</span>
+                                </div>
+                                <div>
+                                    <label>Срок:</label>
+                                    <span>Срок oт 20 дней</span>
+                                </div>
+                            </div>
+                            <div class="service-card__info">
+                                <h4>Интернет магазин</h4>
+                                <div class="service-card__price">
+                                    <div>
+                                        <label>Стоимость: </label>
+                                        <span>oт 60.000 ₽</span>
+                                    </div>
+                                    <div>
+                                        <label>Срок:</label>
+                                        <span>Срок oт 7 дней</span>
+                                    </div>
+                                </div>
+                                <p>Интернет-магазин/каталог на cms WordPress и 1C-Bitrix, с полным функционалом и
+                                    надежностью.</p>
+                                <button class="_btn _btn-dark"><label>Обсудить проект</label> <span></span></button>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section dprofile">
+        <div class="section__container _container">
+            <div class="section__body">
+                <a href="https://dprofile.ru/yan_studio" target="_blank" class="section__content" data-animate
+                    data-animate-opacity>
+                    <p>Мы на площадке Dprofile</p>
+                    <img src="img/icons/dprofile.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section process">
+        <div class="section__container _container">
+            <div class="section__body">
+                <div class="section__content">
+                    <div class="section__top">
+                        <h2>Процесс</h2>
+                    </div>
+                    <div class="section__bottom">
+                        <article class="grid grid-4 process-card" data-animate-stagger data-animate-bottom>
+                            <div class="process-card__numb">/ 01</div>
+                            <div class="process-card__svg">
+                                <svg viewBox="0 0 105 104">
+                                    <use xlink:href="@img/svg/icons.svg#process-1"></use>
+                                </svg>
+                            </div>
+                            <h5 class="process-card__name">Брифинг</h5>
+                            <p class="process-card__text">Предоставляем подробный бриф для заполнения. Свяжемся с вами
+                                для уточнения деталей брифа.</p>
+                        </article>
+                        <article class="grid grid-4 process-card" data-animate-stagger data-animate-bottom>
+                            <div class="process-card__numb">/ 02</div>
+                            <div class="process-card__svg">
+                                <svg viewBox="0 0 105 104">
+                                    <use xlink:href="@img/svg/icons.svg#process-2"></use>
+                                </svg>
+                            </div>
+                            <h5 class="process-card__name">Техническое задание</h5>
+                            <p class="process-card__text">Разрабатываем понятное техническое задание – документ, который
+                                включает в себя все требования к будущему проекту.</p>
+                        </article>
+                        <article class="grid grid-4 process-card" data-animate-stagger data-animate-bottom>
+                            <div class="process-card__numb">/ 03</div>
+                            <div class="process-card__svg">
+                                <svg viewBox="0 0 105 104">
+                                    <use xlink:href="@img/svg/icons.svg#process-3"></use>
+                                </svg>
+                            </div>
+                            <h5 class="process-card__name">Дизайн</h5>
+                            <p class="process-card__text">Сначала разрабатываем прототип.
+                                На основе прототипа отрисовываем все страницы сайта и их адаптивные версии. Каждый этап
+                                согласовываем с вами.</p>
+                        </article>
+                        <article class="grid grid-4 process-card" data-animate-stagger data-animate-bottom>
+                            <div class="process-card__numb">/ 04</div>
+                            <div class="process-card__svg">
+                                <svg viewBox="0 0 105 104">
+                                    <use xlink:href="@img/svg/icons.svg#process-4"></use>
+                                </svg>
+                            </div>
+                            <h5 class="process-card__name">Верстка + <br> Программирование</h5>
+                            <p class="process-card__text">Адаптивная верстка всех дизайн-макетов и разработка
+                                функционала сайта. Проводим все необходимые интеграции. Подключим
+                                удобную административную панель для комфортной работы с сайтом.</p>
+                        </article>
+                        <article class="grid grid-4 process-card" data-animate-stagger data-animate-bottom>
+                            <div class="process-card__numb">/ 05</div>
+                            <div class="process-card__svg">
+                                <svg viewBox="0 0 105 104">
+                                    <use xlink:href="@img/svg/icons.svg#process-5"></use>
+                                </svg>
+                            </div>
+                            <h5 class="process-card__name">Тестирование</h5>
+                            <p class="process-card__text">Проводим комплексное QA-тестирование для того, чтобы ваш сайт
+                                работал корректно на всех гаджетах и браузерах.</p>
+                        </article>
+                        <article class="grid grid-4 process-card" data-animate-stagger data-animate-bottom>
+                            <div class="process-card__numb">/ 06</div>
+                            <div class="process-card__svg">
+                                <svg viewBox="0 0 105 104">
+                                    <use xlink:href="@img/svg/icons.svg#process-6"></use>
+                                </svg>
+                            </div>
+                            <h5 class="process-card__name">продвижение</h5>
+                            <p class="process-card__text">В конце работы вы получите все необходимые инструменты, чтобы
+                                самостоятельно управлять сайтом. Но если вам нужна помощь
+                                в будущем или хотите добавить что-то новое, мы всегда готовы помочь.</p>
+                        </article>
+                        <article class="grid grid-4 process-card" data-animate-stagger data-animate-bottom>
+                            <div class="process-card__numb">/ 07</div>
+                            <div class="process-card__svg">
+                                <svg viewBox="0 0 105 104">
+                                    <use xlink:href="@img/svg/icons.svg#process-7"></use>
+                                </svg>
+                            </div>
+                            <h5 class="process-card__name">Поддержка</h5>
+                            <p class="process-card__text">В конце работы вы получите все необходимые инструменты, чтобы
+                                самостоятельно управлять сайтом. Но если вам нужна помощь
+                                в будущем или хотите добавить что-то новое, мы всегда готовы помочь.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 @@include('./html/footer.html')

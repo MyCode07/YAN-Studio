@@ -1,0 +1,225 @@
+.protfolio-card {
+    display: block;
+
+    // .protfolio-card__img
+
+    &__img {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        pointer-events: none;
+        height: 90vh;
+
+        @media (max-width: 992px) {
+            height: 70vh;
+        }
+
+        @media (max-width: 768px) {
+            height: 50vh;
+            min-height: 300px;
+        }
+
+        img,
+        iframe,
+        video {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .protfolio-card__info
+
+    &__info {
+        pointer-events: none;
+
+        p {
+            opacity: 0.5;
+            margin-bottom: 40px;
+            @include adaptive-value("margin-top", 20, 16, 1);
+        }
+
+        ol {
+            @media (max-width: 992px) {
+                display: grid;
+            }
+
+            li {
+                font-size: 12px;
+                line-height: 1;
+                text-transform: uppercase;
+                font-family: JetBrainsMono;
+
+                @media (max-width: 425px) {
+                    font-size: 10px;
+                }
+            }
+
+            & > :last-child {
+                opacity: 0.5;
+            }
+        }
+
+        padding-top: 20px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+    }
+}
+
+.service-card {
+    padding: 60px 0;
+
+    @media (max-width: 992px) {
+        display: grid;
+        padding: 40px 0;
+    }
+
+    @media (max-width: 768px) {
+        display: block;
+        padding: 20px 0;
+    }
+
+    // .service-card__numb
+
+    &__numb {
+        font-size: 12px;
+        line-height: 1;
+        font-family: JetBrainsMono;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    // .service-card__price
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            gap: 15px;
+            margin-top: 25px;
+            margin-bottom: 40px;
+            font-size: 14px;
+            display: none;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            opacity: 0.5;
+        }
+    }
+
+    // .service-card__info
+
+    &__info {
+        grid-column: span 2;
+
+        p {
+            margin-top: 30px;
+            margin-bottom: 60px;
+            max-width: 340px;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+        }
+
+        .service-card__price {
+            @media (min-width: 769px) {
+                display: none;
+            }
+
+            @media (max-width: 768px) {
+                display: flex;
+            }
+        }
+    }
+}
+
+.process-card {
+    padding: 40px 0;
+
+    @media (max-width: 992px) {
+        display: grid;
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+
+    // .process-card__numb
+
+    &__numb {
+        font-size: 12px;
+        line-height: 1;
+        font-family: JetBrainsMono;
+
+        margin-top: auto;
+        margin-bottom: auto;
+
+        @media (max-width: 768px) {
+            width: calc(100% - 70px);
+        }
+    }
+
+    // .process-card__svg
+
+    &__svg {
+        svg {
+            fill: none;
+            width: 100px;
+            height: 100px;
+
+            @media (max-width: 768px) {
+                width: 70px;
+                height: 70px;
+            }
+
+            @media (max-width: 425px) {
+                width: 50px;
+                height: 50px;
+            }
+
+            stroke: $black;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+    }
+
+    // .process-card__name
+
+    &__name {
+        margin-top: auto;
+        margin-bottom: auto;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    // .process-card__text
+
+    &__text {
+        margin-top: auto;
+        margin-bottom: auto;
+
+        @media (max-width: 768px) {
+            max-width: 240px;
+            width: 100%;
+        }
+    }
+}
