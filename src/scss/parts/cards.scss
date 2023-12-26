@@ -29,6 +29,10 @@
             height: 100%;
             object-fit: cover;
         }
+
+        ._video {
+            object-position: right bottom;
+        }
     }
 
     // .protfolio-card__info
@@ -40,6 +44,14 @@
             opacity: 0.5;
             margin-bottom: 40px;
             @include adaptive-value("margin-top", 20, 16, 1);
+
+            @media (max-width: 768px) {
+                margin-bottom: 60px;
+
+                br {
+                    display: none;
+                }
+            }
         }
 
         ol {
@@ -79,7 +91,6 @@
 
     @media (max-width: 768px) {
         display: block;
-        padding: 20px 0;
     }
 
     // .service-card__numb

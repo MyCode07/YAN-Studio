@@ -17,6 +17,23 @@
         }
     }
 
+    &.white {
+        background-color: $white;
+
+        * {
+            color: $black;
+            font-weight: 400;
+        }
+
+        .colorONOFF {
+            font-weight: 400;
+        }
+
+        svg {
+            fill: $black;
+        }
+    }
+
     // .header__container
 
     &__container {
@@ -98,6 +115,8 @@
             width: fit-content;
             margin-left: auto;
             font-size: 14px;
+            font-weight: 300;
+            transition: all 0.3s ease 0s;
 
             transition: opacity 0.3s ease 0s;
             @media (any-hover: hover) {

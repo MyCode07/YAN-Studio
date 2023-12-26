@@ -7,10 +7,8 @@ body {
     font-family: "SuisseIntl";
     font-style: normal;
     line-height: normal;
-    color: $black;
     font-size: 16px;
     font-weight: 400;
-    color: $black;
 
     &._noscroll {
         overflow: hidden;
@@ -196,6 +194,10 @@ p {
         font-size: 16px;
         line-height: 1;
         white-space: nowrap;
+
+        @media (max-width: 425px) {
+            font-size: 14px;
+        }
     }
 
     span {
@@ -304,10 +306,6 @@ p {
             color: $black;
             line-height: 1;
             font-family: JetBrainsMono;
-
-            @media (max-width: 768px) {
-                font-size: 10px;
-            }
         }
 
         & > :last-child {

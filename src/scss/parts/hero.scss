@@ -10,7 +10,8 @@
     // .hero__body
 
     &__body {
-        padding: 150px 0;
+        @include adaptive-value('padding-top', 150, 100, 1);
+        @include adaptive-value('padding-bottom', 150, 100, 1);
     }
 
     // .hero__content
