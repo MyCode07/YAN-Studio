@@ -20,7 +20,7 @@
     // .footer__content
 
     &__content {
-        button {
+        .breif-link {
             height: fit-content;
             width: fit-content;
             grid-column: span 2;
@@ -51,7 +51,7 @@
             margin-bottom: 10px;
             border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
             padding-bottom: 2px;
-            
+
             @media (max-width: 768px) {
                 font-size: 14px;
             }

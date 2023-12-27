@@ -1,0 +1,201 @@
+.form {
+    & > :not(:last-child) {
+        @include adaptive-value("margin-bottom", 80, 50, 1);
+    }
+
+    // .form__block
+
+    &__block {
+        padding-top: 20px;
+        border-top: 1px solid rgba($color: $black, $alpha: 0.1);
+        // .form__block-title
+
+        &-title {
+            display: block;
+            color: rgba($color: $black, $alpha: 0.5);
+            @include adaptive-value("font-size", 20, 14, 1);
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            max-width: 630px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    // .form__row
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    // .form__item
+
+    &__item {
+        display: flex;
+        align-items: center;
+        height: 70px;
+        padding: 0 23px;
+        background-color: rgba($color: $black, $alpha: 0.05);
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+
+        &._error {
+            border-color: rgba($color: red, $alpha: 0.5);
+            color: red;
+        }
+
+        @media (max-width: 768px) {
+            height: 50px;
+            padding: 0 15px;
+        }
+
+        input,
+        textarea {
+            background: none;
+            color: $black;
+
+            @include adaptive-value("font-size", 18, 14, 1);
+
+            line-height: 1;
+            width: 100%;
+            height: 100%;
+
+            &::placeholder {
+                color: $black;
+
+                opacity: 1;
+            }
+        }
+
+        label {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+            cursor: pointer;
+
+            input {
+                display: none;
+            }
+        }
+
+        &._textarea-input {
+            height: 200px;
+            padding-top: 30px;
+
+            @media (max-width: 768px) {
+                height: 150px;
+                padding-top: 15px;
+            }
+
+            @media (max-width: 425px) {
+                height: 100px;
+            }
+        }
+    }
+
+    // .form__button
+
+    &__button {
+        button {
+            width: 100%;
+            @include adaptive-value("height", 140, 50, 1);
+            background-color: rgba($color: $black, $alpha: 0.05);
+            color: rgba($color: $black, $alpha: 0.5);
+        }
+
+        div {
+            p {
+                grid-column-start: 2;
+                max-width: 330px;
+                width: 100%;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 140%;
+                margin-top: 20px;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                    margin-top: 10px;
+                }
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+._columns {
+    @media (min-width: 1251px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    label {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .checkbox {
+            flex: 0 0 auto;
+            border: 1px solid $black;
+            width: 24px;
+            height: 24px;
+
+            @media (max-width: 768px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+.filename {
+    max-width: 90%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    @include adaptive-value("font-size", 18, 14, 1);
+}
+
+.form__item label input:checked + .checkbox {
+    background-color: currentColor;
+}
+
+._delete-file {
+    font-size: 12px;
+    text-transform: initial;
+    display: none;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: none;
+    align-items: center;
+    text-decoration: underline;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    @media (max-width: 425px) {
+        font-size: 10px;
+    }
+
+    &._active {
+        display: flex;
+    }
+}

@@ -1,0 +1,197 @@
+@@include('./html/head.html', {
+"title":"Бриф",
+})
+
+@@include('./html/menu.html', {
+"class":"white",
+})
+
+@@include('./html/header.html', {
+"class":"white",
+})
+
+<main>
+    <section class="hero hero-pages breif-page">
+        <div class="hero__container _container">
+            <div class="hero__body grid grid-4">
+                <div class="hero__content">
+                    <h1 data-animate-stagger data-animate-bottom>Бриф</h1>
+                    <p data-animate-stagger data-animate-bottom>Ответим в течение одного рабочего дня!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section__container _container">
+            <div class="section__body">
+                <form action="#" class="form">
+                    <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
+                        <span class="form__block-title">Напишите о себе</span>
+                        <div class="form__row">
+                            <div class="form__item" data-required="">
+                                <input type="text" name="name" placeholder="Ваше имя *">
+                            </div>
+                            <div class="form__item" data-required="">
+                                <input type="text" name="phone" placeholder="Номер телефона *" inputmode="text">
+                            </div>
+                            <div class="form__item" data-required="">
+                                <input type="email" name="email" placeholder="Email *">
+                            </div>
+                            <div class="form__item">
+                                <input type="text" name="city" placeholder="Город">
+                            </div>
+                            <div class="form__item">
+                                <input type="text" name="position" placeholder="Должность">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
+                        <span class="form__block-title">Вас интересует</span>
+                        <div class="form__row _columns" data-checkbox-container="">
+                            <div class="form__item">
+                                <label for="develop">
+                                    <span class="value">Разработка</span>
+                                    <input id="develop" name="type" type="radio" value="Разработка">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="design">
+                                    <span class="value">Дизайн</span>
+                                    <input id="design" name="type" type="radio" value="Дизайн">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="tech">
+                                    <span class="value">Техническая поддержка</span>
+                                    <input id="tech" name="type" type="radio" value="Техническая поддержка">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="other-type">
+                                    <span class="value">Другое</span>
+                                    <input id="other-type" name="type" type="radio" value="Другое">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
+                        <span class="form__block-title">Бюджет</span>
+                        <div class="form__row _columns" data-checkbox-container="">
+                            <div class="form__item">
+                                <label for="40-100">
+                                    <span class="value">100.000 – 250.000 рублей</span>
+                                    <input id="40-100" name="price" type="radio" value="100.000–250.000 рублей">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="100-200">
+                                    <span class="value">250.000 – 500.000 рублей</span>
+                                    <input id="100-200" name="price" type="radio" value="250.000–500.000 рублей">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="200-400">
+                                    <span class="value">500.000 – 1.000.000 рублей</span>
+                                    <input id="200-400" name="price" type="radio" value="500.000–1.000.000 рублей">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="400+">
+                                    <span class="value">Более 1.000.000 рублей</span>
+                                    <input id="400+" name="price" type="radio" value="Более 1.000.000 рублей">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
+                        <span class="form__block-title">Удобный способ связи</span>
+                        <div class="form__row _columns" data-checkbox-container="">
+                            <div class="form__item">
+                                <label for="tg">
+                                    <span class="value">Telegram</span>
+                                    <input id="tg" name="contact" type="radio" value="Telegram">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="wapp">
+                                    <span class="value">WhatsApp</span>
+                                    <input id="wapp" name="contact" type="radio" value="WhatsApp">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="phone">
+                                    <span class="value">Телефонный звонок</span>
+                                    <input id="phone" name="contact" type="radio" value="Телефонный звонок">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
+                                <label for="email">
+                                    <span class="value">Email</span>
+                                    <input id="email" name="contact" type="radio" value="email">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
+                        <span class="form__block-title">Если у вас есть ТЕХНИЧЕСКОЕ ЗАДАНИЕ ИЛИ ДРУГОЙ ФАЙЛ СВЯЗАННЫЙ С
+                            ПРОЕКТОМ, ПРИКРЕПИТЕ.</span>
+                        <div class="form__row">
+                            <div class="form__item">
+                                <label for="file">
+                                    <span class="value filename">+ Прикрепить файл</span>
+                                    <input id="file" name="file" type="file"
+                                        accept="application/msword, application/vnd.ms-powerpoint, text/plain, application/pdf">
+                                </label>
+                                <div class="_delete-file">Удалить</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
+
+                        <span class="form__block-title">
+                            Напишите, что ещё важно знать о вашем проекте
+                        </span>
+                        <div class="form__row">
+                            <div class="form__item _textarea-input" data-required="">
+                                <textarea name="msg" placeholder="Сообщение *"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form__button" data-animate-stagger data-animate-bottom>
+                        <button class="_btn" type="submit">Отправить</button>
+                        <div class="grid grid-2">
+                            <p>Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных и
+                                соглашаюсь с
+                                <a href="privacy-policy.html" target="_blank">политикой конфиденциальности.</a>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@@include('./html/footer.html')
+
+@@include('./html/scripts.html')

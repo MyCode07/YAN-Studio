@@ -34,28 +34,6 @@ main {
     flex: 1 1 auto;
 }
 
-.grid {
-    display: grid;
-    grid-template-rows: auto;
-
-    &-4 {
-        grid-template-columns: repeat(4, 1fr);
-
-        @media (max-width: 992px) {
-            display: block;
-        }
-    }
-
-    &-2 {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-
-        @media (max-width: 992px) {
-            display: block;
-        }
-    }
-}
-
 ._container {
     width: 100%;
     margin-inline: auto;
@@ -170,6 +148,14 @@ p {
     position: relative;
     overflow: hidden;
     height: 50px;
+    font-size: 16px;
+    line-height: 1;
+    white-space: nowrap;
+    width: fit-content;
+    
+    @media (max-width: 425px) {
+        font-size: 14px;
+    }
 
     &:before {
         position: absolute;
@@ -188,16 +174,6 @@ p {
         transform: scale(0) translate(0, -50%);
         background-color: currentColor;
         pointer-events: none;
-    }
-
-    label {
-        font-size: 16px;
-        line-height: 1;
-        white-space: nowrap;
-
-        @media (max-width: 425px) {
-            font-size: 14px;
-        }
     }
 
     span {
@@ -331,6 +307,7 @@ p {
 ._underline {
     position: relative;
     overflow: hidden;
+    z-index: 2;
 
     &:before {
         position: absolute;

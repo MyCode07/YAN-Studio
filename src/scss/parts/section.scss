@@ -1,5 +1,4 @@
 .section {
-    @include adaptive-value("margin-top", 100, 50, 1);
     @include adaptive-value("margin-bottom", 100, 50, 1);
 
     // .section__container
@@ -152,115 +151,6 @@
     }
 }
 
-.about-page {
-    label {
-        grid-column-start: 2;
-        margin-top: auto;
-        color: #000;
-        font-family: Arial;
-        font-size: 14px;
-        line-height: 1.4;
-        max-width: 340px;
-        width: 100%;
-
-        @media (max-width: 992px) {
-            @include adaptive-value("margin-top", 80, 40, 1);
-        }
-    }
-
-    .section__body {
-        @include adaptive-value("padding-top", 150, 100, 1);
-        @include adaptive-value("padding-bottom", 150, 100, 1);
-
-        @media (min-width: 993px) {
-            gap: 20px;
-        }
-
-        @media (max-width: 992px) {
-            display: flex;
-            flex-direction: column-reverse;
-        }
-    }
-
-    .section__content {
-        * {
-            color: $black;
-        }
-
-        grid-column: span 2;
-        grid-column-start: 3;
-
-        h1 {
-            font-weight: 400;
-            width: fit-content;
-        }
-
-        p {
-            max-width: 320px;
-            width: 100%;
-            font-family: SuisseIntl;
-            font-weight: 400;
-
-            br {
-                display: none;
-            }
-
-            @media (max-width: 992px) {
-                margin: 0px 0 20px 0;
-            }
-        }
-
-        .main {
-            margin: 40px 0;
-            max-width: none;
-            font-family: Arial;
-            line-height: 1;
-            letter-spacing: -0.32px;
-            @include adaptive-value("font-size", 32, 18, 1);
-
-            @media (min-width: 993px) {
-                text-indent: 50%;
-            }
-
-            @media (max-width: 992px) and (min-width: 425px) {
-                max-width: 60%;
-            }
-
-            @media (max-width: 768px) {
-                line-height: 1.2;
-            }
-        }
-
-        div {
-            @media (max-width: 992px) {
-                display: flex;
-                gap: 40px;
-            }
-
-            @media (max-width: 768px) {
-                display: block;
-            }
-        }
-    }
-
-    .big-text {
-        background: linear-gradient(
-            180deg,
-            #000 0%,
-            rgba(0, 0, 0, 0.93) 81.25%,
-            rgba(0, 0, 0, 0.42) 88.02%,
-            rgba(0, 0, 0, 0) 94.27%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-        @media (max-width: 425px) {
-            font-weight: 400;
-        }
-    }
-}
-
 .advantages {
     .left {
         display: flex;
@@ -274,16 +164,19 @@
         .titles {
             overflow: hidden;
             height: 36px;
-            display: flex;
-            flex-direction: column;
 
-            label {
-                font-family: Arial;
-                @include adaptive-value("font-size", 30, 16, 1);
-                font-weight: 400;
-                line-height: 36px;
-                letter-spacing: -0.9px;
-                text-transform: uppercase;
+            &-box {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    font-family: Arial;
+                    @include adaptive-value("font-size", 30, 16, 1);
+                    font-weight: 400;
+                    line-height: 36px;
+                    letter-spacing: -0.9px;
+                    text-transform: uppercase;
+                }
             }
         }
 
@@ -371,4 +264,120 @@
             }
         }
     }
+}
+
+.about-page {
+    * {
+        color: $black;
+    }
+
+    .section__body {
+        @media (min-width: 993px) {
+            gap: 20px;
+        }
+
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+
+    h1 {
+        grid-column-start: 3;
+    }
+
+    label {
+        grid-column-start: 2;
+        margin-top: auto;
+        font-family: Arial;
+        font-size: 14px;
+        line-height: 1.4;
+        max-width: 340px;
+        width: 100%;
+        margin-right: 20px;
+
+        @media (max-width: 992px) {
+            margin-right: 0;
+            @include adaptive-value("margin-top", 80, 20, 1);
+        }
+    }
+
+    .info-text {
+        @media (max-width: 992px) {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        div {
+            grid-column-start: 3;
+
+            @media (max-width: 992px) and (min-width: 768px) {
+                display: flex;
+                gap: 40px;
+            }
+
+            & > :not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            p {
+                margin: 0;
+                max-width: 320px;
+                width: 100%;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .main-text {
+        grid-column: span 2;
+        grid-column-end: 4;
+
+        margin: 40px 0;
+        max-width: none;
+        font-family: Arial;
+        line-height: 1;
+        letter-spacing: -0.32px;
+        @include adaptive-value("font-size", 32, 20, 1);
+
+        @media (min-width: 993px) {
+            text-indent: 50%;
+        }
+
+        @media (max-width: 992px) and (min-width: 425px) {
+            max-width: 60%;
+        }
+
+        @media (max-width: 768px) {
+            line-height: 1.2;
+        }
+    }
+
+    .big-text {
+        background: linear-gradient(
+            180deg,
+            #000 0%,
+            rgba(0, 0, 0, 0.93) 81.25%,
+            rgba(0, 0, 0, 0.42) 88.02%,
+            rgba(0, 0, 0, 0) 94.27%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @media (max-width: 425px) {
+            font-weight: 400;
+        }
+    }
+}
+
+.breif-page {
+    p {
+        margin-bottom: 0 !important;
+    }
+}
+
+.portfolio-page {
 }

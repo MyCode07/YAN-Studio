@@ -108,37 +108,45 @@ const footerLogo = document.querySelector('.footer__logo svg');
 observer.observe(footerLogo);
 
 
-
-
-
 export const aniamteTrigger = () => {
     const advantagesLines = gsap.utils.toArray(".right .text-wrap li");
-    console.log(advantagesLines);
     if (advantagesLines.length) {
-        const line = document.querySelector('.line span');
-        const list = document.querySelector('.right .text-wrap li');
-        const wrap = document.querySelector('.right .text-wrap');
+        const timeline = gsap.timeline();
         const smallTimeline = gsap.timeline();
+        const line = document.querySelector('.line span');
+        const list = document.querySelector('.right');
+        const titlesBlok = document.querySelector('.titles-box');
         const listHeight = list.getBoundingClientRect().height;
-        const wrapHeight = wrap.getBoundingClientRect().height;
-        const deltaHeight = listHeight - wrapHeight
 
-        console.log('deltaHeight ' + deltaHeight);
         ScrollTrigger.create({
             trigger: '.advantages',
-            start: "top -20%",
+            start: "top 10%",
             end: `+=${listHeight}`,
+            scrub: 0.75,
+            // markers: true,
+            pin: true,
+            animation: timeline,
+            onUpdate: self => {
+                line.style.width = self.progress * 100 + '%';
+                gsap.to(list, {
+                    y: self.progress * -listHeight,
+                })
+            }
+        })
+
+        ScrollTrigger.create({
+            trigger: list,
+            start: "top",
+            end: "end",
             scrub: 0.75,
             markers: true,
             pin: true,
             animation: smallTimeline,
             onUpdate: self => {
-                line.style.width = self.progress * 100 + '%';
-                // gsap.to(list, {
-                //     y: self.progress * -deltaHeight + self.progress * -168,
-                // })
+                gsap.to(titlesBlok, {
+                    y: self.progress * - 100 + '%',
+                })
             }
         })
-
     }
 }

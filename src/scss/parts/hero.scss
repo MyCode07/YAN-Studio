@@ -1,6 +1,11 @@
 .hero {
     background-color: $black;
     padding-bottom: 16px;
+    @include adaptive-value("margin-bottom", 100, 50, 1);
+
+    &.mb-0 {
+        margin-bottom: 0 !important;
+    }
 
     // .hero__container
 
@@ -10,8 +15,8 @@
     // .hero__body
 
     &__body {
-        @include adaptive-value('padding-top', 150, 100, 1);
-        @include adaptive-value('padding-bottom', 150, 100, 1);
+        @include adaptive-value("padding-top", 150, 100, 1);
+        @include adaptive-value("padding-bottom", 150, 100, 1);
     }
 
     // .hero__content
@@ -53,6 +58,41 @@
                     display: block;
                 }
             }
+        }
+    }
+
+    // .hero-pages
+
+    &-pages {
+        padding-bottom: 0;
+        background-color: $white;
+
+        * {
+            color: $black;
+        }
+
+        .section__body {
+            @include adaptive-value("padding-top", 150, 100, 1);
+            @include adaptive-value("padding-bottom", 150, 100, 1);
+        }
+
+        .section__top {
+            padding: 0;
+        }
+
+        h1 {
+            color: $black;
+            font-weight: 400;
+            width: fit-content;
+
+            grid-column: span 2;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+
+        p {
+            color: $black;
+            font-weight: 400;
         }
     }
 }

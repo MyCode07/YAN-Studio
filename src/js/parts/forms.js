@@ -162,7 +162,8 @@ document.addEventListener('DOMContentLoaded', function () {
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                document.querySelector('#filename').innerHTML = file.name;
+                document.querySelector('.filename').innerHTML = file.name;
+                document.querySelector('._delete-file').classList.add('_active');
             };
 
             reader.onerror = function (e) {
@@ -194,4 +195,13 @@ function checkCheckBoxes(form) {
             }
         })
     }
+}
+
+
+const fileDeleteBtn = document.querySelector('._delete-file');
+if (fileDeleteBtn) {
+    fileDeleteBtn.addEventListener('click', (e) => {
+        document.querySelector('.filename').innerHTML = '+ Прикрепить файл';
+        e.target.classList.remove('_active');
+    })
 }

@@ -43,6 +43,9 @@
 // load animations
 @import "common/animations";
 
+// load grid
+@import "parts/grid";
+
 // load hero
 @import "parts/hero";
 
@@ -52,4 +55,8 @@
 // load section
 @import "parts/cards";
 
- 
+// load form
+@import "common/form";
+
+// load privacy
+@import "parts/privacy";
