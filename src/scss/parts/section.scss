@@ -198,11 +198,12 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
-        height: fit-content;
+
+        height: 1em;
+        overflow: hidden;
 
         font-family: Arial;
         @include adaptive-value("font-size", 18, 14, 1);
-
         font-weight: 400;
         line-height: 1;
 
@@ -212,9 +213,6 @@
         }
 
         .numbers {
-            width: 12px;
-            height: 1em;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
@@ -240,6 +238,7 @@
         grid-column: span 2;
         padding-left: 20px;
         border-left: 1px solid $black;
+        height: fit-content;
 
         @media (max-width: 992px) {
             padding-left: 0;

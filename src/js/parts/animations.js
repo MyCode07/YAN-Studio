@@ -112,39 +112,30 @@ export const aniamteTrigger = () => {
     const advantagesLines = gsap.utils.toArray(".right .text-wrap li");
     if (advantagesLines.length) {
         const timeline = gsap.timeline();
-        const smallTimeline = gsap.timeline();
         const line = document.querySelector('.line span');
         const list = document.querySelector('.right');
+        const numbers = document.querySelector('.numbers');
         const titlesBlok = document.querySelector('.titles-box');
         const listHeight = list.getBoundingClientRect().height;
 
         ScrollTrigger.create({
             trigger: '.advantages',
-            start: "top 10%",
-            end: `+=${listHeight}`,
+            start: "top 15%",
+            end: `+=${listHeight - 200 + 'px'}`,
             scrub: 0.75,
-            // markers: true,
+            markers: true,
             pin: true,
             animation: timeline,
             onUpdate: self => {
                 line.style.width = self.progress * 100 + '%';
                 gsap.to(list, {
-                    y: self.progress * -listHeight,
+                    y: self.progress * -listHeight + 250 + 'px',
                 })
-            }
-        })
-
-        ScrollTrigger.create({
-            trigger: list,
-            start: "top",
-            end: "end",
-            scrub: 0.75,
-            markers: true,
-            pin: true,
-            animation: smallTimeline,
-            onUpdate: self => {
                 gsap.to(titlesBlok, {
-                    y: self.progress * - 100 + '%',
+                    y: self.progress * - 65 + '%',
+                })
+                gsap.to(numbers, {
+                    y: self.progress * - 35 + '%',
                 })
             }
         })
