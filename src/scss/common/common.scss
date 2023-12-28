@@ -9,6 +9,7 @@ body {
     line-height: normal;
     font-size: 16px;
     font-weight: 400;
+    background-color: $white;
 
     &._noscroll {
         overflow: hidden;
@@ -99,6 +100,14 @@ p {
     }
 }
 
+._mobile-show {
+    @media (min-width: 1024px) {
+        display: none;
+    }
+    font-size: 12px;
+    margin-left: auto;
+}
+
 .big-text {
     font-family: SuisseIntl;
     font-weight: 300;
@@ -152,7 +161,7 @@ p {
     line-height: 1;
     white-space: nowrap;
     width: fit-content;
-    
+
     @media (max-width: 425px) {
         font-size: 14px;
     }
