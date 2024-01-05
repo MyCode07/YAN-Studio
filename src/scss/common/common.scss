@@ -10,6 +10,7 @@ body {
     font-size: 16px;
     font-weight: 400;
     background-color: $white;
+    color: $black;
 
     &._noscroll {
         overflow: hidden;
@@ -43,7 +44,6 @@ main {
 }
 
 h1 {
-    color: $white;
     @include adaptive-value("font-size", 74, 46, 1);
     @include adaptive-value("line-height", 62, 46, 1);
     @include adaptive-value("letter-spacing", -4.4, -2, 1);
@@ -52,7 +52,6 @@ h1 {
 }
 
 h2 {
-    color: $black;
     @include adaptive-value("font-size", 64, 42, 1);
     @include adaptive-value("line-height", 64, 42, 1);
     @include adaptive-value("letter-spacing", -4.4, -2, 1);
@@ -60,7 +59,6 @@ h2 {
 }
 
 h3 {
-    color: $black;
     font-size: 18px;
     line-height: 1;
 
@@ -70,7 +68,6 @@ h3 {
 }
 
 h4 {
-    color: $black;
     font-family: Arial;
     font-size: 20px;
     @include adaptive-value("font-size", 40, 20, 1);
@@ -90,7 +87,6 @@ h5 {
 }
 
 p {
-    color: $black;
     font-size: 16px;
     line-height: 1.4;
 
@@ -109,43 +105,13 @@ p {
 }
 
 .big-text {
-    font-family: SuisseIntl;
-    font-weight: 300;
-    line-height: 1;
+    line-height: 1.1;
     text-transform: uppercase;
-    @include adaptive-value("font-size", 107, 30, 1);
+    @include adaptive-value("font-size", 64, 27, 1);
     @include adaptive-value("letter-spacing", -3, -1, 1);
-    color: $white;
     text-transform: uppercase;
-
-    background: linear-gradient(
-        180deg,
-        #fff 0%,
-        rgba(255, 255, 255, 0.93) 47.92%,
-        rgba(255, 255, 255, 0.51) 67.71%,
-        rgba(255, 255, 255, 0) 84.9%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    @media (max-width: 1024px) {
-        background: linear-gradient(
-            180deg,
-            #fff 0%,
-            rgba(255, 255, 255, 0.93) 66.67%,
-            rgba(255, 255, 255, 0.51) 73.96%,
-            rgba(255, 255, 255, 0) 92.19%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        line-height: 115% !important;
-    }
-
-    @media (max-width: 425px) {
-        font-weight: 600;
-    }
+    width: 100%;
+    display: block;
 }
 
 ._btn {
@@ -203,30 +169,30 @@ p {
         pointer-events: none;
     }
 
-    &-white {
-        border: 1px solid rgba($color: $white, $alpha: 0.1);
-        color: $white;
+    // &-white {
+    //     border: 1px solid rgba($color: $white, $alpha: 0.1);
+    //     color: $white;
 
-        @media (any-hover: hover) {
-            &:hover {
-                &:before {
-                    transform: scale(1) translate(0, -50%);
-                    border-radius: 0;
-                    max-width: 100%;
-                    max-height: 100%;
-                    right: 0;
-                }
+    //     @media (any-hover: hover) {
+    //         &:hover {
+    //             &:before {
+    //                 transform: scale(1) translate(0, -50%);
+    //                 border-radius: 0;
+    //                 max-width: 100%;
+    //                 max-height: 100%;
+    //                 right: 0;
+    //             }
 
-                label {
-                    color: $black;
-                }
+    //             label {
+    //                 color: $black;
+    //             }
 
-                span {
-                    background-color: $black;
-                }
-            }
-        }
-    }
+    //             span {
+    //                 background-color: $black;
+    //             }
+    //         }
+    //     }
+    // }
 
     &-dark {
         color: $black;

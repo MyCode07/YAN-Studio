@@ -1,7 +1,7 @@
 .header {
-    background-color: $black;
     position: fixed;
     z-index: 6;
+    background-color: $white;
 
     top: 0;
     left: 0;
@@ -9,11 +9,11 @@
     width: 100%;
 
     * {
-        color: $white;
+        color: $black;
     }
 
-    &.white {
-        background-color: $white;
+    &.black {
+        background-color: $black;
 
         * {
             color: $black;
@@ -59,7 +59,7 @@
             flex: 0 0 auto;
             width: 109px;
             height: 13px;
-            fill: $white;
+            fill: $black;
 
             @media (max-width: 768px) {
                 width: 84px;
@@ -100,8 +100,8 @@
 
                 a {
                     font-size: 14px;
-                    white-space: nowrap;
-                    font-weight: 300;
+                    word-spacing: nowrap;
+                    font-weight: 400;
                 }
             }
         }

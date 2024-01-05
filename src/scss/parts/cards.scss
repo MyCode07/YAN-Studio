@@ -1,6 +1,5 @@
 .protfolio-card {
     display: block;
-    height: fit-content;
 
     // .protfolio-card__img
 
@@ -17,7 +16,7 @@
 
         @media (max-width: 768px) {
             height: 50vh;
-            min-height: 300px;
+            min-height: 320px;
         }
 
         img,
@@ -45,8 +44,10 @@
             opacity: 0.5;
             margin-bottom: 40px;
             @include adaptive-value("margin-top", 20, 16, 1);
-
+            max-width: 50%;
+            width: 100%;
             @media (max-width: 768px) {
+                max-width: none;
                 margin-bottom: 60px;
 
                 br {
