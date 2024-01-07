@@ -10,25 +10,6 @@
 
     transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
 
-    &.white {
-        background-color: $white;
-
-        * {
-            color: $black;
-            font-weight: 400;
-        }
-
-        ._social-buttons {
-            .back {
-                fill: $black;
-            }
-
-            .icon {
-                fill: $white;
-            }
-        }
-    }
-
     &._open {
         transform: translate(0, 0);
     }

@@ -14,7 +14,6 @@ playVideoAction();
 animateStaggerAction();
 animateAction();
 replaceDomElements();
-aniamteTrigger();
 termsTabAction();
 
 // maskInputs('+7 999 999 999 999', '.phone')

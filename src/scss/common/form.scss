@@ -88,10 +88,12 @@
         &._textarea-input {
             height: 200px;
             padding-top: 30px;
+            padding-bottom: 30px;
 
             @media (max-width: 768px) {
                 height: 150px;
                 padding-top: 15px;
+                padding-bottom: 15px;
             }
 
             @media (max-width: 425px) {
@@ -106,7 +108,7 @@
         button {
             width: 100%;
             @include adaptive-value("height", 140, 50, 1);
-            background-color: rgba($color: $black, $alpha: 0.05);
+            background-color: rgba($color: $black, $alpha: 0.5);
             color: rgba($color: $black, $alpha: 0.5);
         }
 

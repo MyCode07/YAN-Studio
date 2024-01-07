@@ -31,9 +31,18 @@
             letter-spacing: -1px;
             text-transform: uppercase;
             @include adaptive-value("font-size", 66, 24, 1);
+            display: block;
 
             @media (max-width: 992px) {
                 margin-bottom: 50px;
+            }
+
+            &._underline {
+                &:before {
+                    @media (any-hover: none) {
+                        background-color: $black;
+                    }
+                }
             }
         }
     }

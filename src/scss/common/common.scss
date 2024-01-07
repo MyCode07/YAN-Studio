@@ -100,7 +100,9 @@ p {
     @media (min-width: 1024px) {
         display: none;
     }
-    font-size: 12px;
+
+    line-height: 1;
+    font-size: 13px;
     margin-left: auto;
 }
 
@@ -112,6 +114,34 @@ p {
     text-transform: uppercase;
     width: 100%;
     display: block;
+
+    background: linear-gradient(
+        180deg,
+        #000 0%,
+        rgba(0, 0, 0, 0.93) 81.25%,
+        rgba(0, 0, 0, 0.42) 88.02%,
+        rgba(0, 0, 0, 0) 94.27%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 768px) {
+        background: linear-gradient(
+            180deg,
+            #000 0%,
+            rgba(0, 0, 0, 0.93) 89%,
+            rgba(0, 0, 0, 0.42) 94%,
+            rgba(0, 0, 0, 0) 98%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    @media (max-width: 425px) {
+        font-weight: 400;
+    }
 }
 
 ._btn {
@@ -149,6 +179,11 @@ p {
         transform: scale(0) translate(0, -50%);
         background-color: currentColor;
         pointer-events: none;
+    }
+
+    label {
+        position: relative;
+        top: 1px;
     }
 
     span {
@@ -214,6 +249,29 @@ p {
 
                 span {
                     background-color: $white;
+                }
+            }
+        }
+    }
+
+    &-black {
+        border: unset;
+        background-color: $black;
+        color: $white;
+        font-weight: 300;
+
+        @media (any-hover: hover) {
+            &:hover {
+                &:before {
+                    border: 1px solid $black;
+                }
+
+                label {
+                    color: $black;
+                }
+
+                span {
+                    background-color: $black;
                 }
             }
         }
