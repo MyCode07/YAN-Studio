@@ -21,14 +21,15 @@ export const path = {
         scss: `${srcFolder}/scss/style.scss`,
         html: `${srcFolder}/*.html`,
         files: `${srcFolder}/files/**/*.*`,
-        svgicons: `${srcFolder}/svgicons/*.svg`,
+        svgicons: `${srcFolder}/svg/*.svg`,
     },
     watch: {
         js: `${srcFolder}/js/**/*.js`,
         scss: `${srcFolder}/scss/**/*.scss`,
         html: `${srcFolder}/**/*.html`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,PNG,JPEG,JPG,png,svg,gif,ico,webp}`,
-        files: `${srcFolder}/files/**/*.*`
+        files: `${srcFolder}/files/**/*.*`,
+        svgicons: `${srcFolder}/svg/*.svg`,
     },
     clean: buildFolder,
     buildFolder: buildFolder,
