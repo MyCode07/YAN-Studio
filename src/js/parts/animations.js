@@ -74,18 +74,15 @@ const observerStagger = new IntersectionObserver((entries, self) => {
 });
 
 function animateStagger(elem) {
-    if (elem) {
-        gsap.to(elem, {
-            opacity: 1,
-            duration: 0.3,
-            x: 0,
-            y: 0,
-            y: 0,
-            strokeDashoffset:0,
-            ease: 'ease',
-            stagger: 0.2
-        });
-    }
+    gsap.to(elem, {
+        opacity: 1,
+        duration: 0.3,
+        x: 0,
+        y: 0,
+        y: 0,
+        ease: 'ease',
+        stagger: 0.2,
+    });
 }
 
 
@@ -96,6 +93,41 @@ export const animateStaggerAction = () => {
         observerStagger.observe(elem);
     })
 }
+
+
+// stagger svg animations
+const observerSVGStagger = new IntersectionObserver((entries, self) => {
+    let targets = entries
+        .map(entry => {
+            if (entry.isIntersecting) {
+                self.unobserve(entry.target)
+                return entry.target;
+            }
+        })
+        .filter(item => item != undefined);
+
+    animateSVG(targets)
+});
+
+function animateSVG(elem, i) {
+    gsap.to(elem, {
+        duration: 5,
+        delay: 0.3,
+        strokeDashoffset: 0,
+        ease: 'ease',
+        stagger: 0.3,
+    });
+}
+
+
+const animateSVGElems = document.querySelectorAll('[data-animate-svg]');
+export const animateSVGStaggerAction = () => {
+    if (!animateSVGElems.length) return
+    animateSVGElems.forEach(elem => {
+        observerSVGStagger.observe(elem);
+    })
+}
+
 
 
 function animateLogo(logo) {
@@ -112,6 +144,7 @@ function animateLogo(logo) {
 }
 
 const footerLogo = document.querySelector('.footer__logo svg');
-observer.observe(footerLogo);
-
-
+export const ainmateFooterLogo = () => {
+    if (!footerLogo) return;
+    observer.observe(footerLogo);
+}

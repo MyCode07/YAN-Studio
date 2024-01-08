@@ -1,6 +1,4 @@
 .footer {
-    height: 80vh;
-
     // .footer__container
 
     &__container {
@@ -13,8 +11,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 100%;
-        gap: 50px;
+        @include adaptive-value("gap", 400, 100, 1);
     }
 
     // .footer__content
@@ -93,12 +90,17 @@
         position: relative;
         display: flex;
         align-items: flex-end;
-        height: fit-content;
+        height: auto;
 
         svg {
             display: block;
-            width: 100%;
-            height: fit-content;
+            width: 99vw;
+            max-width: none;
+            height: auto;
+            flex: 0 0 auto;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
 
             path {
                 fill: $black;

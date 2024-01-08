@@ -30,6 +30,7 @@ body {
 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 main {
@@ -160,20 +161,16 @@ p {
     &:before {
         position: absolute;
         content: "";
-        right: 20px;
-        top: 50%;
+        left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
-
-        max-width: 0;
-        max-height: 0;
-        border-radius: 50%;
-
-        transition: all 0.3s ease 0s;
-
-        transform: scale(0) translate(0, -50%);
         background-color: currentColor;
         pointer-events: none;
+
+        
+        clip-path: circle(4px at calc(100% - 20px - 4px) 50%);
+        transition: all 0.3s ease 0s;
     }
 
     label {
@@ -199,31 +196,6 @@ p {
         pointer-events: none;
     }
 
-    // &-white {
-    //     border: 1px solid rgba($color: $white, $alpha: 0.1);
-    //     color: $white;
-
-    //     @media (any-hover: hover) {
-    //         &:hover {
-    //             &:before {
-    //                 transform: scale(1) translate(0, -50%);
-    //                 border-radius: 0;
-    //                 max-width: 100%;
-    //                 max-height: 100%;
-    //                 right: 0;
-    //             }
-
-    //             label {
-    //                 color: $black;
-    //             }
-
-    //             span {
-    //                 background-color: $black;
-    //             }
-    //         }
-    //     }
-    // }
-
     &-dark {
         color: $black;
         border: 1px solid rgba($color: $black, $alpha: 0.1);
@@ -231,11 +203,7 @@ p {
         @media (any-hover: hover) {
             &:hover {
                 &:before {
-                    transform: scale(1) translate(0, -50%);
-                    border-radius: 0;
-                    max-width: 100%;
-                    max-height: 100%;
-                    right: 0;
+                    clip-path: circle(70.7% at 50% 50%);
                 }
 
                 label {
