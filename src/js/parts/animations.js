@@ -43,6 +43,11 @@ function animate(elem) {
             elem.removeAttribute('data-animate-opacity');
         }, delay);
     }
+    if (elem.hasAttribute('data-animate-svg')) {
+        setTimeout(() => {
+            elem.removeAttribute('data-animate-svg');
+        }, delay);
+    }
 }
 
 const animateElems = document.querySelectorAll('[data-animate]');
@@ -66,7 +71,6 @@ const observerStagger = new IntersectionObserver((entries, self) => {
         .filter(item => item != undefined);
 
     animateStagger(targets)
-    svgFill();
 });
 
 function animateStagger(elem) {
@@ -76,21 +80,15 @@ function animateStagger(elem) {
             duration: 0.3,
             x: 0,
             y: 0,
+            y: 0,
+            strokeDashoffset:0,
             ease: 'ease',
             stagger: 0.2
         });
     }
 }
 
-const processSvg = document.querySelectorAll('.process-card__svg svg');
 
-function svgFill() {
-    if (processSvg.length) {
-        processSvg.forEach(svg => {
-            svg.classList.add('_active');
-        });
-    }
-}
 const animateElemsStagger = document.querySelectorAll('[data-animate-stagger]');
 export const animateStaggerAction = () => {
     if (!animateElemsStagger.length) return

@@ -206,15 +206,6 @@
             stroke: $black;
             margin-top: auto;
             margin-bottom: auto;
-
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            pointer-events: none;
-            animation: all 5s linear forwards;
-
-            &._active {
-                stroke-dashoffset: 0;
-            }
         }
     }
 

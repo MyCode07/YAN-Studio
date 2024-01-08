@@ -18,6 +18,11 @@
     opacity: 0;
 }
 
+[data-animate-svg] {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+}
+
 [data-animate-opacity] {
     opacity: 0;
 }

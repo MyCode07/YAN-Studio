@@ -52,11 +52,16 @@
         background-color: $black;
     }
 
+    span {
+        grid-column: span 2;
+    }
+
     p {
         @include adaptive-value("font-size", 26, 16, 1);
         line-height: 1.3;
 
         @media (min-width: 769px) {
+            width: 75%;
             letter-spacing: -1px;
         }
     }
