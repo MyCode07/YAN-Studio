@@ -44,11 +44,9 @@ main {
 }
 
 h1 {
-    @include adaptive-value("font-size", 74, 46, 1);
-    @include adaptive-value("line-height", 62, 46, 1);
-    @include adaptive-value("letter-spacing", -4.4, -2, 1);
-    font-family: SuisseIntl;
-    font-weight: 300;
+    @include adaptive-value("font-size", 74, 43, 1);
+    line-height: 1;
+    letter-spacing: -0.02em;
 }
 
 h2 {
@@ -68,7 +66,6 @@ h3 {
 }
 
 h4 {
-    font-family: Arial;
     font-size: 20px;
     @include adaptive-value("font-size", 40, 20, 1);
     line-height: 120%;
@@ -76,9 +73,7 @@ h4 {
 }
 
 h5 {
-    font-family: Arial;
     font-style: normal;
-    font-weight: 400;
     line-height: 120%;
     letter-spacing: -0.5px;
     text-transform: uppercase;

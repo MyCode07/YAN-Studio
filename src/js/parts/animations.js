@@ -66,6 +66,7 @@ const observerStagger = new IntersectionObserver((entries, self) => {
         .filter(item => item != undefined);
 
     animateStagger(targets)
+    svgFill();
 });
 
 function animateStagger(elem) {
@@ -81,12 +82,20 @@ function animateStagger(elem) {
     }
 }
 
+const processSvg = document.querySelectorAll('.process-card__svg svg');
+
+function svgFill() {
+    if (processSvg.length) {
+        processSvg.forEach(svg => {
+            svg.classList.add('_active');
+        });
+    }
+}
 const animateElemsStagger = document.querySelectorAll('[data-animate-stagger]');
 export const animateStaggerAction = () => {
     if (!animateElemsStagger.length) return
     animateElemsStagger.forEach(elem => {
         observerStagger.observe(elem);
-
     })
 }
 
