@@ -67,22 +67,67 @@
     }
 
     ol {
-        display: flex;
         @include adaptive-value("margin-top", 40, 20, 1);
-        gap: 60px;
+        gap: 0;
+
+        @media (max-width: 1200px) and (min-width: 993px) {
+            display: block;
+        }
+
+        @media (max-width: 992px) {
+            display: grid;
+        }
 
         @media (max-width: 425px) {
-            gap: 30px;
-            flex-direction: column;
-            align-items: flex-start;
+            display: block;
+        }
+
+        & > :first-child {
+            @media (min-width: 1201px) {
+                border-right: 0;
+            }
+
+            @media (max-width: 992px) {
+                border-right: 0;
+            }
+
+            @media (max-width: 425px) {
+                border-right: 1px solid rgba($color: $black, $alpha: 0.05);
+            }
+
+            @media (max-width: 1200px) {
+                border-bottom: 0;
+            }
+
+            @media (max-width: 992px) {
+                border-bottom: 1px solid rgba($color: $black, $alpha: 0.05);
+            }
+
+            @media (max-width: 425px) {
+                border-bottom: 0;
+            }
         }
 
         li {
+            position: relative;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            align-items: flex-end;
+            justify-content: flex-end;
+            border: 1px solid rgba($color: $black, $alpha: 0.05);
+            width: 100%;
+            @include adaptive-value("height", 200, 150, 1);
+            padding: 20px;
+
+            span {
+                @include adaptive-value("font-size", 120, 50, 1);
+            }
 
             label {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                @include adaptive-value("font-size", 16, 14, 1);
                 opacity: 0.5;
             }
         }
