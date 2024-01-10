@@ -65,6 +65,28 @@
             letter-spacing: -1px;
         }
     }
+
+    ol {
+        display: flex;
+        @include adaptive-value("margin-top", 40, 20, 1);
+        gap: 60px;
+
+        @media (max-width: 425px) {
+            gap: 30px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+                opacity: 0.5;
+            }
+        }
+    }
 }
 
 .portfolio {
@@ -167,7 +189,6 @@
             border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
         }
     }
-
 }
 
 .advantages {
