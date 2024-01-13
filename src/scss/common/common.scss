@@ -53,8 +53,7 @@ h1 {
 h2 {
     @include adaptive-value("font-size", 64, 42, 1);
     @include adaptive-value("line-height", 64, 42, 1);
-    @include adaptive-value("letter-spacing", -4.4, -2, 1);
-    letter-spacing: -0.9px;
+    @include adaptive-value("letter-spacing", -3, -1, 1);
 }
 
 h3 {
@@ -110,31 +109,7 @@ p {
     text-transform: uppercase;
     width: 100%;
     display: block;
-
-    background: linear-gradient(
-        180deg,
-        #000 0%,
-        rgba(0, 0, 0, 0.93) 81.25%,
-        rgba(0, 0, 0, 0.42) 88.02%,
-        rgba(0, 0, 0, 0) 94.27%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    @media (max-width: 768px) {
-        background: linear-gradient(
-            180deg,
-            #000 0%,
-            rgba(0, 0, 0, 0.93) 89%,
-            rgba(0, 0, 0, 0.42) 94%,
-            rgba(0, 0, 0, 0) 98%
-        );
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
+   
     @media (max-width: 425px) {
         font-weight: 400;
     }

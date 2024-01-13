@@ -130,6 +130,13 @@
     &__info {
         grid-column: span 2;
 
+        h4 {
+            @media (min-width: 769px) {
+                position: relative;
+                top: -3px;
+            }
+        }
+
         p {
             margin-top: 30px;
             margin-bottom: 60px;
