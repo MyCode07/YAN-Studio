@@ -40,12 +40,19 @@
     &__info {
         pointer-events: none;
 
+        h3{
+            text-transform: capitalize;
+        }
+
         p {
             opacity: 0.5;
             margin-bottom: 40px;
             @include adaptive-value("margin-top", 20, 16, 1);
             max-width: 50%;
             width: 100%;
+            font-size: 14px;
+            line-height: 1.2;
+
             @media (max-width: 768px) {
                 max-width: none;
                 margin-bottom: 60px;

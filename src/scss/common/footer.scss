@@ -12,6 +12,7 @@
         flex-direction: column;
         justify-content: space-between;
         @include adaptive-value("gap", 300, 100, 1);
+        padding-bottom: 16px;
     }
 
     // .footer__content
