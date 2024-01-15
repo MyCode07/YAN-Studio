@@ -95,13 +95,9 @@
 
         svg {
             display: block;
-            width: 99vw;
             max-width: none;
             height: auto;
             flex: 0 0 auto;
-            position: relative;
-            left: 50%;
-            transform: translate(-50%, 0);
 
             path {
                 fill: $black;
