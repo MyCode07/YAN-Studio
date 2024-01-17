@@ -1,6 +1,6 @@
 "use strict"
 
-const url = '';
+const url = '/files/curl.php';
 
 document.addEventListener('DOMContentLoaded', function () {
     const forms = document.querySelectorAll('form')
