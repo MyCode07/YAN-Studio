@@ -156,12 +156,17 @@
             }
         }
 
-        & > :first-child {
+        & > :first-child,
+        & > :last-child {
             grid-column: span 2;
         }
 
-        & > :nth-child(n + 4) {
+        & > :nth-child(4n) {
             grid-column: span 2;
+        }
+
+        & > :nth-child(8) {
+            grid-column: span 1;
         }
     }
 }
@@ -169,12 +174,7 @@
 .services {
     .section__bottom {
         & > :first-child {
-            padding-top: 0;
-        }
-
-        & > :nth-child(2) {
-            border-top: 1px solid rgba($color: $black, $alpha: 0.1);
-            border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+            border-bottom: 1px solid rgba($color: $black, $alpha: 0.05);
         }
     }
 }

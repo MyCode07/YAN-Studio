@@ -92,13 +92,19 @@ p {
 }
 
 ._mobile-show {
-    @media (min-width: 1024px) {
-        display: none;
+    @media (min-width: 1025px) {
+        display: none !important;
     }
 
     line-height: 1;
     font-size: 13px;
     margin-left: auto;
+}
+
+._desktop-show {
+    @media (max-width: 1024px) {
+        display: none !important;
+    }
 }
 
 .big-text {
@@ -109,7 +115,7 @@ p {
     text-transform: uppercase;
     width: 100%;
     display: block;
-   
+
     @media (max-width: 425px) {
         font-weight: 400;
     }
@@ -143,7 +149,6 @@ p {
         background-color: currentColor;
         pointer-events: none;
 
-        
         clip-path: circle(4px at calc(100% - 20px - 4px) 50%);
         transition: all 0.3s ease 0s;
     }
