@@ -48,8 +48,16 @@
         transition: all 0.3s ease 0s;
 
         &._error {
-            border-color: rgba($color: red, $alpha: 0.5);
-            color: red;
+            box-shadow: 0px 0px 0px 1px rgba($color: red, $alpha: 1);
+
+            input,
+            textarea {
+                color: red;
+
+                &::placeholder {
+                    color: red;
+                }
+            }
         }
 
         @media (max-width: 768px) {
@@ -68,9 +76,10 @@
             width: 100%;
             height: 100%;
 
+            resize: none;
+
             &::placeholder {
                 color: $black;
-
                 opacity: 1;
             }
         }
@@ -110,14 +119,35 @@
         }
     }
 
+    [data-checkbox-container] {
+        &._error {
+            .form__item {
+                box-shadow: 0px 0px 0px 1px rgba($color: red, $alpha: 1);
+
+                input,
+                textarea,
+                .value {
+                    color: red;
+
+                    &::placeholder {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+
     // .form__button
 
     &__button {
         button {
             width: 100%;
             @include adaptive-value("height", 140, 60, 1);
-            background-color: rgba($color: $black, $alpha: 0.5);
-            color: rgba($color: $black, $alpha: 0.5);
+            // background-color: rgba($color: $black, $alpha: 0.5);
+            // color: rgba($color: $black, $alpha: 0.5);
+
+            background-color: $black;
+            color: $white;
 
             @media (max-width: 425px) {
                 font-size: 14px;
@@ -125,18 +155,49 @@
         }
 
         div {
+            margin-top: 20px;
+
+            @media (max-width: 768px) {
+                margin-top: 10px;
+            }
+
             p {
+                width: 100%;
                 grid-column-start: 2;
                 max-width: 330px;
-                width: 100%;
                 font-size: 14px;
                 font-weight: 400;
                 line-height: 140%;
-                margin-top: 20px;
 
                 @media (max-width: 768px) {
                     font-size: 12px;
-                    margin-top: 10px;
+                }
+            }
+
+            &._hide {
+                display: none;
+            }
+
+            &.error-msgs {
+                margin-bottom: 20px;
+                color: red;
+
+                p {
+                    max-width: none;
+                }
+
+                span {
+                    margin: 0 1em;
+                }
+
+                a {
+                    &:not(:last-child) {
+                        margin-right: 1em;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    margin-bottom: 10px;
                 }
             }
 

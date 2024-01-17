@@ -10,9 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
 
+                removeExistingErrorMsgs(form);
                 let error = validateForm(form)
+                console.log(error);
 
-                let formData = new FormData(form);
+                const formData = new FormData(form);
 
                 if (formFile && formFile.files[0]) {
                     formData.append('file', formFile.files[0]);
@@ -26,14 +28,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         body: formData
                     });
 
-
                     if (response.ok) {
                         sentMessage(form)
                         form.reset();
                         form.classList.remove('_sending');
 
                         setTimeout(() => {
-                            resetForm(form)
+
                         }, 5000);
                     }
                     else {
@@ -41,20 +42,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         form.classList.remove('_sending');
 
                         setTimeout(() => {
-                            resetForm(form)
+
                         }, 5000);
                     }
                 }
-
                 else {
                     fillAllFields(form)
 
                     form.classList.remove('_sending');
                     setTimeout(() => {
-                        resetForm(form)
+
                     }, 5000);
                 }
-
             })
 
             checkCheckBoxes(form)
@@ -73,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             input.addEventListener('input', function () {
                 formRemoveError(input);
-                validateInput()
-                resetForm(form)
+                validateInput();
             })
 
             function validateInput() {
@@ -83,34 +81,107 @@ document.addEventListener('DOMContentLoaded', function () {
                         formAddError(input);
                         error++;
                     }
+                    else {
+                        formRemoveError(input);
+                    }
                 }
                 else {
                     if (input.getAttribute('name') === 'phone') {
-                        if (/[_]/.test(input.value) || input.value.length < 18) {
+                        if (/[_]/.test(input.value) || input.value.length < 16) {
                             formAddError(input);
                             error++;
+                        } else {
+                            formRemoveError(input);
                         }
-
                     }
                     else {
                         if (input.value.length < 2) {
                             formAddError(input);
                             error++;
+                        } else {
+                            formRemoveError(input);
                         }
                     }
                 }
             }
         }
 
+        const checkBoxContainers = form.querySelectorAll('[data-checkbox-container]')
+        let checkedArr = [];
+        for (let i = 0; i < checkBoxContainers.length; i++) {
+            const checkBoxes = [...checkBoxContainers[i].querySelectorAll('input')]
+
+            checkBoxes.forEach(input => {
+                input.addEventListener('input', function () {
+                    input.closest('[data-checkbox-container]').classList.remove('_error')
+                })
+            })
+
+            checkedArr.push(checkBoxes.some(input => {
+                if (!input.checked) {
+                    input.closest('[data-checkbox-container]').classList.add('_error')
+                }
+                else {
+                    input.closest('[data-checkbox-container]').classList.remove('_error')
+                }
+                return input.checked
+            }))
+        }
+
+        checkedArr.forEach((elem, i) => {
+            if (elem == true) {
+                removeElemErrorMsg(checkBoxContainers[i])
+            }
+            else {
+                addErrorMsg(checkBoxContainers[i], checkBoxContainers[i].closest('.form__block').querySelector('.form__block-title').textContent)
+            }
+        });
+
+
+        const checked = checkedArr.every(check => { return check == true })
+        if (!checked === true) error++
+
         return error;
     }
 
     function formAddError(input) {
-        input.closest('.form__input').classList.add('_error');
+        input.closest('.form__item').classList.add('_error');
+        addErrorMsg(input, input.placeholder)
     }
 
     function formRemoveError(input) {
-        input.closest('.form__input').classList.remove('_error');
+        input.closest('.form__item').classList.remove('_error');
+        removeElemErrorMsg(input)
+
+        const submitBtnBlock = input.closest('form').querySelector('.form__button .error-msgs')
+        const existMsgs = submitBtnBlock.querySelectorAll('.form__button .error-msgs a')
+
+        if (!existMsgs.length) {
+            submitBtnBlock.classList.add('_hide')
+            removeExistingErrorMsgs(input.closest('form'));
+        }
+    }
+
+    function addErrorMsg(elem, text) {
+        removeElemErrorMsg(elem)
+        const submitBtnBlock = elem.closest('form').querySelector('.form__button .error-msgs')
+        const item = `<a href="#${elem.id}" data-id="${elem.id}">${text},</a>`
+        submitBtnBlock.classList.remove('_hide')
+        submitBtnBlock.querySelector('span').insertAdjacentHTML('beforeend', item)
+    }
+
+    function removeElemErrorMsg(elem) {
+        const msg = elem.closest('form').querySelector(`.form__button .error-msgs a[data-id="${elem.id}"]`)
+        if (msg) {
+            msg.remove();
+        }
+    }
+
+    function removeExistingErrorMsgs(form) {
+        const existMsgs = form.querySelectorAll('.form__button .error-msgs a')
+        if (existMsgs.length) {
+            existMsgs.forEach(m => m.remove())
+        }
     }
 
     function emailTest(input) {
@@ -119,7 +190,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function sentMessage(form) {
         const submitBtn = form.querySelector('.form__button button')
-
         submitBtn.classList.add('_sent');
     }
 
@@ -133,29 +203,24 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.classList.add('_error');
     }
 
-    function resetForm(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.remove('_error');
-        submitBtn.classList.remove('_fail');
-        submitBtn.classList.remove('_sent');
-    }
-
-
     const formFile = document.querySelector('input[name="file"]');
     if (formFile) {
         formFile.addEventListener('change', () => {
-            uploadFile(formFile.files[0]);
+            if (formFile.files[0]) {
+                uploadFile(formFile.files[0]);
+            }
         });
 
         function uploadFile(file) {
+
             if (!['application/msword', 'application/pdf', 'application/vnd.ms-powerpoint', 'text/plain'].includes(file.type)) {
                 alert('Разрешены только текстовые документы.');
                 document.querySelector('#filename').innerHTML = '';
                 formFile.value = '';
                 return;
             }
-            if (file.size > 2 * 1024 * 1024) {
-                alert('Файл должен быть менее 2 МБ.');
+            if (file.size > 20 * (1024 * 1024)) {
+                alert('Файл должен быть менее 20 МБ.');
                 return;
             }
 
@@ -173,7 +238,6 @@ document.addEventListener('DOMContentLoaded', function () {
             reader.readAsDataURL(file);
         }
     }
-
 });
 
 function checkCheckBoxes(form) {
@@ -181,7 +245,6 @@ function checkCheckBoxes(form) {
     if (checkBoxContainers.length) {
         checkBoxContainers.forEach(container => {
             const cehckboxes = container.querySelectorAll('input[type="checkbox"]')
-
             if (cehckboxes.length) {
                 cehckboxes.forEach(checkbox => {
                     checkbox.addEventListener('input', () => {

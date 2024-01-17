@@ -31,27 +31,28 @@
                     <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
                         <span class="form__block-title">Напишите о себе</span>
                         <div class="form__row">
-                            <div class="form__item" data-required="">
-                                <input type="text" name="name" placeholder="Ваше имя *">
+                            <div class="form__item" data-required>
+                                <input type="text" name="name" id="name" placeholder="Ваше имя *">
                             </div>
-                            <div class="form__item" data-required="">
-                                <input type="text" name="phone" placeholder="Номер телефона *" inputmode="text">
+                            <div class="form__item" data-required>
+                                <input type="text" name="phone" id="phone" placeholder="Номер телефона *"
+                                    inputmode="text">
                             </div>
-                            <div class="form__item" data-required="">
-                                <input type="email" name="email" placeholder="Email *">
+                            <div class="form__item" data-required>
+                                <input type="email" name="email" id="email" placeholder="Email *">
+                            </div>
+                            <div class="form__item" data-required>
+                                <input type="text" name="city" id="city" placeholder="Город">
                             </div>
                             <div class="form__item">
-                                <input type="text" name="city" placeholder="Город">
-                            </div>
-                            <div class="form__item">
-                                <input type="text" name="position" placeholder="Должность">
+                                <input type="text" name="position" id="position" placeholder="Должность">
                             </div>
                         </div>
                     </div>
 
                     <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
                         <span class="form__block-title">Вас интересует</span>
-                        <div class="form__row _columns" data-checkbox-container="">
+                        <div class="form__row _columns" data-checkbox-container id="interesting">
                             <div class="form__item">
                                 <label for="develop">
                                     <span class="value">Разработка</span>
@@ -85,7 +86,7 @@
 
                     <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
                         <span class="form__block-title">Бюджет</span>
-                        <div class="form__row _columns" data-checkbox-container="">
+                        <div class="form__row _columns" data-checkbox-container id="budget">
                             <div class="form__item">
                                 <label for="40-100">
                                     <span class="value">100.000 – 250.000 рублей</span>
@@ -119,32 +120,32 @@
 
                     <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
                         <span class="form__block-title">Удобный способ связи</span>
-                        <div class="form__row _columns" data-checkbox-container="">
+                        <div class="form__row _columns" data-checkbox-container id="conn-type">
                             <div class="form__item">
-                                <label for="tg">
+                                <label for="contact-tg">
                                     <span class="value">Telegram</span>
-                                    <input id="tg" name="contact" type="radio" value="Telegram">
+                                    <input id="contact-tg" name="contact" type="radio" value="Telegram">
                                     <span class="checkbox"></span>
                                 </label>
                             </div>
                             <div class="form__item">
-                                <label for="wapp">
+                                <label for="contact-whapp">
                                     <span class="value">WhatsApp</span>
-                                    <input id="wapp" name="contact" type="radio" value="WhatsApp">
+                                    <input id="contact-whapp" name="contact" type="radio" value="WhatsApp">
                                     <span class="checkbox"></span>
                                 </label>
                             </div>
                             <div class="form__item">
-                                <label for="phone">
+                                <label for="contact-phone">
                                     <span class="value">Телефонный звонок</span>
-                                    <input id="phone" name="contact" type="radio" value="Телефонный звонок">
+                                    <input id="contact-phone" name="contact" type="radio" value="Телефонный звонок">
                                     <span class="checkbox"></span>
                                 </label>
                             </div>
                             <div class="form__item">
-                                <label for="email">
+                                <label for="contact-email">
                                     <span class="value">Email</span>
-                                    <input id="email" name="contact" type="radio" value="email">
+                                    <input id="contact-email" name="contact" type="radio" value="email">
                                     <span class="checkbox"></span>
                                 </label>
                             </div>
@@ -167,18 +168,24 @@
                     </div>
 
                     <div class="form__block grid grid-2" data-animate-stagger data-animate-bottom>
-
                         <span class="form__block-title">
                             Напишите, что ещё важно знать о вашем проекте
                         </span>
                         <div class="form__row">
-                            <div class="form__item _textarea-input" data-required="">
-                                <textarea name="msg" placeholder="Сообщение *"></textarea>
+                            <div class="form__item _textarea-input" data-required>
+                                <textarea name="msg" id="msg" placeholder="Сообщение *"></textarea>
                             </div>
                         </div>
                     </div>
 
                     <div class="form__button" data-animate-stagger data-animate-bottom>
+                        <div class="grid grid-2 _hide error-msgs">
+                            <p>
+                                <label>Поля:</label>
+                                <span></span>
+                                <label> обязательны к заполннию.</label>
+                            </p>
+                        </div>
                         <button class="" type="submit">Отправить</button>
                         <div class="grid grid-2">
                             <p>Нажимая на кнопку «Отправить», я даю согласие на обработку персональных данных и

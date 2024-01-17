@@ -107,7 +107,7 @@
     // .service-card__numb
 
     &__numb {
-        font-family: JetBrains Mono;
+        font-family: JetBrainsMono;
         font-size: 12px;
 
         @media (max-width: 500px) {
@@ -131,6 +131,10 @@
 
         @media (max-width: 1024px) {
             margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            margin-top: 20px;
         }
 
         div {
@@ -167,7 +171,7 @@
             }
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1024px) and (min-width: 501px) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
@@ -176,10 +180,16 @@
             margin-left: unset !important;
         }
 
+        h4 {
+            @media (max-width: 1024px) {
+                padding-right: 40px;
+            }
+        }
+
         button {
-            @media (max-width: 1024px) and (min-width: 501px) {
+            @media (max-width: 1024px) {
                 position: absolute;
-                right: 16px;
+                right: 0;
             }
 
             @media (max-width: 500px) {
@@ -197,18 +207,13 @@
             @include adaptive-value("font-size", 34, 18, 1);
             pointer-events: none;
             line-height: 1;
-            white-space: nowrap;
         }
 
         svg {
-            width: 40px;
-            height: 40px;
             transition: all 0.3s ease 0s;
 
-            @media (max-width: 768px) {
-                width: 24px;
-                height: 24px;
-            }
+            @include adaptive-value("width", 40, 24, 1);
+            @include adaptive-value("height", 40, 24, 1);
         }
     }
 
@@ -378,6 +383,10 @@
 
         ._btn {
             margin-top: 40px;
+
+            @media (max-width: 600px) {
+                margin-top: 30px;
+            }
         }
     }
 
@@ -401,10 +410,14 @@
     }
 
     .service-card__box {
-        overflow: hidden;
-        max-height: 0;
-        height: auto;
         transition: all 0.3s ease 0s;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.5s;
+    }
+
+    .service-card__height {
+        overflow: hidden;
     }
 
     &._active {
@@ -413,9 +426,9 @@
                 transform: rotate(-45deg);
             }
         }
+
         .service-card__box {
-            overflow: visible;
-            max-height: 100%;
+            grid-template-rows: 1fr;
         }
     }
 
