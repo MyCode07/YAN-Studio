@@ -55,7 +55,7 @@
 
             @media (max-width: 768px) {
                 max-width: none;
-                margin-bottom: 60px;
+                margin-bottom: 30px;
 
                 br {
                     display: none;
@@ -465,7 +465,7 @@
         margin-bottom: auto;
 
         @media (max-width: 1024px) {
-            width: calc(100% - 70px);
+            width: 100%;
         }
     }
 
@@ -473,6 +473,7 @@
 
     &__svg {
         margin-left: auto;
+        height: fit-content;
 
         svg {
             fill: none;
