@@ -1,10 +1,11 @@
-import { isMobile } from "./isMobile.js";
+import { isMobile } from "../utils/isMobile.js";
+import { lockPadding, unLockPadding } from "../utils/lockPadding.js";
 
 const popupAll = document.querySelectorAll('.popup');
 const popupOpenButtons = document.querySelectorAll('[data-open-popup]');
 
 
-if (popupOpenButtons.length)
+if (popupOpenButtons.length) {
     popupOpenButtons.forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.preventDefault();
@@ -20,26 +21,30 @@ if (popupOpenButtons.length)
                 }
             }
         })
-    }) 
+    })
+}
 
-if (popupAll.length)
+if (popupAll.length) {
     popupAll.forEach(popup => {
         const popupClose = popup.querySelector('.popup__close');
 
-        popupClose.addEventListener('click', function () {
-            popup.classList.remove('_open');
-            document.body.classList.remove('_noscroll');
-
-            if (!isMobile.any()) {
-                unLockPadding()
-            }
-        })
-
-        popup.addEventListener('click', function (e) {
-            if (e.target.classList.contains('popup')) {
-                popup.classList.remove('_open')
+        if (!popup.classList.contains('loader')) {
+            popupClose.addEventListener('click', function () {
+                popup.classList.remove('_open');
                 document.body.classList.remove('_noscroll');
-                unLockPadding()
-            }
-        })
+
+                if (!isMobile.any()) {
+                    unLockPadding()
+                }
+            })
+
+            popup.addEventListener('click', function (e) {
+                if (e.target.classList.contains('popup')) {
+                    popup.classList.remove('_open')
+                    document.body.classList.remove('_noscroll');
+                    unLockPadding()
+                }
+            })
+        }
     })
+}

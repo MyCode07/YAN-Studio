@@ -1,48 +1,35 @@
 <?php
 $tg_bot_token = "6295142205:AAFxTDfp4B4elVwF2vTo38bKvpKPJDuqR_Y";
-$chat_id = "-977499279";
+$chat_id = "-1002099237292";
 
 $name = $_POST['name'];
 $phone = $_POST['phone'];
-$message = $_POST['message'];
 $email = $_POST['email'];
-
 $city = $_POST['city'];
 $position = $_POST['position'];
-$brand = $_POST['brand'];
-$service = $_POST['service'];
-$url = $_POST['url'];
-$legal_name = $_POST['legal-name'];
-$experience = $_POST['experience'];
-$services = $_POST['services'];
-$content = $_POST['content'];
-$hosting = $_POST['hosting'];
-$domain = $_POST['domain'];
-$more = $_POST['more'];
 
-$messenger = $_POST['messenger'];
+$service = $_POST['service'];
+$price = $_POST['price'];
+$contact = $_POST['contact'];
+
+$file = $_POST['file'];
+
+$msg = $_POST['message'];
 
 $arr = array(
     'Имя' => $name,
     'Телефон' => $phone,
-    'Сообщение' => $message,
     'E-mail' => $email,
 
     'Город' => $city,
     'Должность' =>  $position,
-    'Бренд' => $brand,
-    'Сфера деятельности' => $service,
-    'Ссылка на сайт' => $url,
-    'Наименование компании' =>  $legal_name,
-    'Сколько лет на рынке' => $experience,
-    'Товары' => $services,
+    
+    'Услуга' => $services,
+    'Бюджет' => $price,
 
-    'Контент' => $content,
-    'Хостинг' => $hosting,
-    'Домен' => $domain,
-    'Дополнительно' => $more,
+    'Удобный способ связи' => $contact,
+    'Сообщение' => $message,
     'Файл' => $file,
-    'Удобный способ связи' => $messenger,
 );
 
 $body = "<b>Новый заказ со сайта yanstudio.site.</b>\n\n";

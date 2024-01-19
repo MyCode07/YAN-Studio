@@ -1,9 +1,14 @@
 "use strict"
 
+import { lockPadding } from '../utils/lockPadding.js';
+
 const url = '/files/curl.php';
 
 document.addEventListener('DOMContentLoaded', function () {
     const forms = document.querySelectorAll('form')
+    const thanksPopup = document.querySelector('.popup#thanks');
+    const failPopup = document.querySelector('.popup#error');
+    const laoder = document.querySelector('.loader');
 
     if (forms.length) {
         forms.forEach(form => {
@@ -22,37 +27,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (error === 0) {
                     form.classList.add('_sending');
+                    showLoader();
 
                     let response = await fetch(url, {
                         method: 'POST',
                         body: formData
                     });
 
+                    console.log(response);
+
                     if (response.ok) {
                         sentMessage(form)
                         form.reset();
                         form.classList.remove('_sending');
-
-                        setTimeout(() => {
-
-                        }, 5000);
+                        hideLoader();
                     }
                     else {
                         failMessage(form)
                         form.classList.remove('_sending');
-
-                        setTimeout(() => {
-
-                        }, 5000);
+                        hideLoader();
                     }
                 }
                 else {
-                    fillAllFields(form)
-
                     form.classList.remove('_sending');
-                    setTimeout(() => {
-
-                    }, 5000);
                 }
             })
 
@@ -114,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
             checkBoxes.forEach(input => {
                 input.addEventListener('input', function () {
                     input.closest('[data-checkbox-container]').classList.remove('_error')
+                    removeElemErrorMsg(checkBoxContainers[i])
                 })
             })
 
@@ -188,19 +186,35 @@ document.addEventListener('DOMContentLoaded', function () {
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
 
-    function sentMessage(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.add('_sent');
+    function sentMessage() {
+        const activePopup = document.querySelector('.popup._open');
+        if (activePopup) activePopup.classList.remove('_open');
+
+        thanksPopup.classList.add('_open')
+        lockPadding();
+
+        const loader = document.querySelector('.loader');
+        if (loader) {
+            loader.remove();
+        }
     }
 
-    function failMessage(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.add('_fail');
+    function failMessage() {
+        failPopup.classList.add('_open')
+        lockPadding();
+
+        const loader = document.querySelector('.loader');
+        if (loader) {
+            loader.remove();
+        }
     }
 
-    function fillAllFields(form) {
-        const submitBtn = form.querySelector('.form__button button')
-        submitBtn.classList.add('_error');
+    function hideLoader() {
+        laoder.classList.remove('_open')
+    }
+
+    function showLoader() {
+        laoder.classList.add('_open')
     }
 
     const formFile = document.querySelector('input[name="file"]');

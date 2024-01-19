@@ -3,6 +3,10 @@
         @include adaptive-value("margin-bottom", 80, 50, 1);
     }
 
+    &._sending {
+        pointer-events: none;
+    }
+
     // .form__block
 
     &__block {

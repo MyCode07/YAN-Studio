@@ -5,6 +5,8 @@ import { replaceDomElements } from "./static/replace.js";
 import { animateAction, animateStaggerAction, animateSVGStaggerAction, ainmateFooterLogo } from "./parts/animations.js";
 import { playVideoAction } from "./parts/video.js";
 import { termsTabAction } from "./parts/term-tabs.js";
+
+import "./parts/popup.js";
 import "./parts/header.js";
 import "./parts/menu.js";
 import "./parts/services.js";
