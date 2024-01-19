@@ -450,6 +450,10 @@
         padding: 20px 0;
     }
 
+    @media (max-width: 992px) {
+        display: flex;
+    }
+
     // .process-card__numb
 
     &__numb {
@@ -525,7 +529,7 @@
         }
 
         @media (max-width: 425px) {
-            max-width: calc(100% - 70px) !important;
+            max-width: calc(100% - 60px) !important;
         }
     }
 }
