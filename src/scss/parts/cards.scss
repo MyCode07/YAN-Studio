@@ -443,16 +443,13 @@
 .process-card {
     padding: 40px 0;
 
-    @media (max-width: 992px) {
-        display: grid;
-    }
-
     @media (max-width: 1024px) {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         padding: 20px 0;
     }
+
 
     // .process-card__numb
 
