@@ -450,7 +450,6 @@
         padding: 20px 0;
     }
 
-
     // .process-card__numb
 
     &__numb {
@@ -520,12 +519,12 @@
         margin-bottom: auto;
 
         @media (max-width: 1024px) {
-            max-width: 50%;
+            max-width: 50% !important;
             width: 100%;
         }
 
         @media (max-width: 425px) {
-            max-width: calc(100% - 60px);
+            max-width: calc(100% - 70px) !important;
         }
     }
 }
