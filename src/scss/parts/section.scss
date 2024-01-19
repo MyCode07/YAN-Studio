@@ -262,7 +262,7 @@
         margin-bottom: 20px;
         max-width: 480px;
         width: 100%;
-        
+
         @media (max-width: 1024px) {
             margin-top: 40px;
         }
@@ -382,6 +382,20 @@
             flex-direction: column-reverse;
         }
 
+        .icon {
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 50%;
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
         div {
             grid-column-start: 3;
 
@@ -398,10 +412,6 @@
                 margin: 0;
                 max-width: 290px;
                 width: 100%;
-
-                br {
-                    display: none;
-                }
             }
         }
     }
