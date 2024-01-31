@@ -85,6 +85,14 @@
         }
     }
 
+    .address {
+        cursor: default;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+        }
+    }
+
     // .footer__logo
 
     &__logo {
