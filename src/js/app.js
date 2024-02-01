@@ -6,12 +6,12 @@ import { animateAction, animateStaggerAction, animateSVGStaggerAction, ainmateFo
 import { playVideoAction } from "./parts/video.js";
 import { termsTabAction } from "./parts/term-tabs.js";
 
+import "./parts/sliders.js";
 import "./parts/popup.js";
 import "./parts/header.js";
 import "./parts/menu.js";
 import "./parts/services.js";
 import "./parts/forms.js";
-import "./static/accordeon.js";
 
 accorden();
 playVideoAction();

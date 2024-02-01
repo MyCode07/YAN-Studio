@@ -485,3 +485,63 @@
         }
     }
 }
+
+.faq {
+    @include adaptive-value("margin-bottom", 200, 100, 1);
+}
+
+.services-v2 {
+    .pagination {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 10px;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
+
+        span {
+            width: 10px;
+            height: 10px;
+            flex: 0 0 auto;
+            border: 1px solid currentColor;
+            border-radius: 50%;
+            cursor: pointer;
+
+            background-color: transparent;
+            transition: all 0.3s ease 0s;
+
+            &.swiper-pagination-bullet-active {
+                background-color: currentColor;
+            }
+        }
+    }
+
+    .section__top {
+        @media (max-width: 1024px) {
+            display: block;
+        }
+    }
+
+    .swiper {
+        @media (max-width: 1920px) {
+            width: 100vw;
+            margin-left: -16px;
+            padding: 0 16px;
+        }
+
+        &-slide {
+            height: auto;
+            max-width: 560px;
+
+            @media (max-width: 1024px) {
+                max-width: 480px;
+            }
+
+            @media (max-width: 600px) {
+                max-width: 75%;
+            }
+        }
+    }
+}
