@@ -4,20 +4,24 @@
     left: 0;
     top: 0;
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     background-color: currentColor;
-    transform: translate(0, -110%);
+    overflow-y: auto;
 
+    transform: translate(0, -110%);
+    pointer-events: none;
     transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
 
     &._open {
-        transform: translate(0, 0);
+        @media (max-width: 1024px) {
+            transform: translate(0, 0);
+            pointer-events: all;
+        }
     }
 
     // .menu__container
 
     &__container {
-        height: 100%;
         width: 100%;
     }
 
@@ -27,9 +31,9 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        height: 100%;
         width: 100%;
         padding: 120px 16px;
+        color: $white;
 
         @media (max-width: 768px) {
             gap: 80px;
@@ -43,6 +47,14 @@
         flex-direction: column;
         gap: 40px;
 
+        @media (min-width: 769px) {
+            max-width: 300px;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
         ul {
             display: flex;
             flex-direction: column;
@@ -50,8 +62,44 @@
 
             li {
                 // transition: transform 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98) 0.5s;
+
+                &._active {
+                    button {
+                        img,
+                        svg {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .dropdown-menu {
+                        grid-template-rows: 1fr;
+                    }
+                }
+
+                &:has(button) {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+
+                button {
+                    width: 20px;
+                    height: 14px;
+                    flex: 0 0 auto;
+                    position: relative;
+                    z-index: 1;
+
+                    img,
+                    svg {
+                        width: 10px;
+                        height: 10px;
+                        margin-left: auto;
+                        stroke: currentColor;
+                        transition: transform 0.3s ease 0s;
+                    }
+                }
+
                 a {
-                    color: $white;
                     font-size: 24px;
                     line-height: 1;
                     letter-spacing: -1px;
@@ -82,6 +130,28 @@
                 color: $white;
                 font-size: 14px;
                 line-height: 1.3;
+            }
+        }
+    }
+
+    .dropdown-menu {
+        flex: 0 0 100%;
+        width: 100%;
+        display: grid;
+
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+
+        ul {
+            margin-top: 16px;
+            margin-bottom: 10px;
+            gap: 16px;
+            overflow: hidden;
+        }
+
+        li {
+            a {
+                font-size: 16px;
             }
         }
     }

@@ -246,7 +246,9 @@
         }
 
         .accordion__item {
-            border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+            }
         }
 
         .accordion__item-title {
@@ -436,6 +438,12 @@
         @media (max-width: 1024px) and (min-width: 501px) {
             max-width: 50%;
             margin-left: auto;
+        }
+    }
+
+    .accordion__item {
+        & + .accordion__item-title {
+            cursor: default;
         }
     }
 }

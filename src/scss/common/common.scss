@@ -383,3 +383,9 @@ svg {
     width: 100%;
     max-width: 100%;
 }
+
+[hidden],
+._hidden-text {
+    display: none !important;
+    visibility: hidden !important;
+}
