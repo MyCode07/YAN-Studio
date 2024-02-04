@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         form.reset();
                         form.classList.remove('_sending');
                         hideLoader();
+
+                        // заявка
+                        ym(93665255, 'reachGoal', 'zayavka');
                     }
                     else {
                         failMessage(form)

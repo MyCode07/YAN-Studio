@@ -81,6 +81,13 @@ h5 {
     @include adaptive-value("font-size", 20, 14, 1);
 }
 
+h6 {
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
 p {
     font-size: 16px;
     line-height: 1.4;
@@ -388,4 +395,43 @@ svg {
 ._hidden-text {
     display: none !important;
     visibility: hidden !important;
+}
+
+table {
+    text-align: left;
+    margin-top: 20px;
+    border-collapse: collapse;
+
+    @include adaptive-value("font-size", 16, 12, 1);
+
+    thead {
+    }
+
+    tbody {
+        tr {
+            &:last-child {
+                th,
+                td {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
+    th,
+    td {
+        padding: 0.5em 0;
+        border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+
+        &:first-child {
+            padding-right: 1em;
+        }
+    }
+
+    td,
+    th {
+        &:last-child {
+            text-align: center;
+        }
+    }
 }

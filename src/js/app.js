@@ -12,6 +12,7 @@ import "./parts/header.js";
 import "./parts/menu.js";
 import "./parts/services.js";
 import "./parts/forms.js";
+import "./parts/show-more.js";
 
 accorden();
 playVideoAction();

@@ -7,14 +7,16 @@
     left: 0;
     padding: 16px 0 16px 0;
     width: 100%;
-    transition: all 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+    transition: background-color 1.2s cubic-bezier(0.16, 1.08, 0.38, 0.98);
 
     * {
         color: $black;
     }
 
     &._active {
-        background-color: $black;
+        @media (max-width: 1024px) {
+            background-color: $black;
+        }
 
         * {
             color: $white;
@@ -106,9 +108,7 @@
                         }
 
                         .dropdown-menu {
-                            opacity: 1;
                             pointer-events: all;
-                            visibility: visible;
                         }
                     }
                 }
@@ -126,9 +126,7 @@
                     }
 
                     .dropdown-menu {
-                        opacity: 1;
                         pointer-events: all;
-                        visibility: visible;
                     }
                 }
 
@@ -227,19 +225,19 @@
         width: 100%;
         background-color: $black;
 
-        opacity: 0;
         pointer-events: none;
-        visibility: hidden;
-        transition: all 0.3s ease 0s;
+        height: 0;
+        overflow: hidden;
 
         ul {
             padding: 76px 16px 16px 16px;
             display: grid;
             gap: 16px;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(7, 1fr);
 
             li {
                 width: 100%;
+                transform: translate(0, 20%);
 
                 a {
                     display: block;
@@ -305,5 +303,3 @@
         }
     }
 }
-
- 

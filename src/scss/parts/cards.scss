@@ -241,7 +241,13 @@
             margin-top: 40px;
 
             & > :first-child {
-                border-top: 1px solid rgba($color: $black, $alpha: 0.2);
+                border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+
+                cursor: default;
+
+                button {
+                    visibility: hidden;
+                }
             }
         }
 
@@ -449,6 +455,8 @@
 }
 
 .process-card {
+    counter-increment: process-counter;
+
     padding: 40px 0;
 
     @media (max-width: 1024px) {
@@ -471,6 +479,10 @@
 
         margin-top: auto;
         margin-bottom: auto;
+
+        &:before {
+            content: "/  0" counter(process-counter);
+        }
 
         @media (max-width: 1024px) {
             width: 100%;
@@ -540,6 +552,94 @@
             max-width: calc(100% - 60px) !important;
         }
     }
+
+    button {
+        margin-top: 1em;
+        padding-bottom: 2px;
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+
+    .hidden-accordion {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease 0s;
+
+        &._active {
+            grid-template-rows: 1fr;
+        }
+    }
+
+    .accordion {
+        width: 200%;
+        overflow: hidden;
+
+        @media (max-width: 425px) {
+            width: calc(100vw - 32px);
+        }
+
+        & > :first-child {
+            border-top: 1px solid rgba($color: $black, $alpha: 0.2);
+            margin-top: 40px;
+
+            @media (max-width: 1024px) {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            & > :last-child {
+                border-bottom: 0;
+            }
+        }
+
+        // .accordion__item
+
+        &__item {
+            border-bottom: 1px solid rgba($color: $black, $alpha: 0.2);
+
+            // .accordion__item-title
+
+            &-title {
+                padding: 10px 0;
+                @include adaptive-value("font-size", 16, 12, 1);
+                text-transform: uppercase;
+
+                span,
+                label {
+                    pointer-events: none;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+
+                    @media (max-width: 500px) {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
+
+            // .accordion__item-content-height
+
+            &-content-height {
+                div {
+                    margin: 10px 0 20px 0;
+                    @include adaptive-value("font-size", 14, 12, 1);
+                    font-weight: 400;
+                    line-height: 1.4;
+                    color: rgba($color: $black, $alpha: 0.5);
+
+                    p {
+                        font-size: inherit;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .faq-item {
@@ -576,6 +676,7 @@
         button {
             margin-left: auto;
             grid-column-start: 4;
+            flex: 0 0 auto;
         }
 
         .accordion__item-title {
