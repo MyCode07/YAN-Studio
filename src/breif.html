@@ -1,7 +1,7 @@
 @@include('./html/head.html', {
 "title":"Бриф",
 "description": "Yan Studio — Разработка сайтов под ключ. Лучшие решения для развития вашего бизнеса.",
-"keywords": "Разработка сайта, создание сайта, создание интерн-магзиана, создание лнадинг пайдж, разработка корпоративного сайта, сайт под ключ",
+"keywords": "Разработка сайта",
 })
 
 @@include('./html/menu.html', {
@@ -13,7 +13,7 @@
 })
 
 <main>
-    
+
     <section class="hero hero-pages breif-page mb-0">
         <div class="hero__container _container">
             <div class="hero__body grid grid-4">
@@ -55,6 +55,13 @@
                         <span class="form__block-title">Вас интересует</span>
                         <div class="form__row _columns" data-checkbox-container id="interesting">
                             <div class="form__item">
+                                <label for="website">
+                                    <span class="value">Сайт под ключ</span>
+                                    <input id="website" name="service" type="radio" value="Сайт под ключ">
+                                    <span class="checkbox"></span>
+                                </label>
+                            </div>
+                            <div class="form__item">
                                 <label for="develop">
                                     <span class="value">Разработка</span>
                                     <input id="develop" name="service" type="radio" value="Разработка">
@@ -65,13 +72,6 @@
                                 <label for="design">
                                     <span class="value">Дизайн</span>
                                     <input id="design" name="service" type="radio" value="Дизайн">
-                                    <span class="checkbox"></span>
-                                </label>
-                            </div>
-                            <div class="form__item">
-                                <label for="tech">
-                                    <span class="value">Техническая поддержка</span>
-                                    <input id="tech" name="service" type="radio" value="Техническая поддержка">
                                     <span class="checkbox"></span>
                                 </label>
                             </div>
@@ -89,9 +89,9 @@
                         <span class="form__block-title">Бюджет</span>
                         <div class="form__row _columns" data-checkbox-container id="budget">
                             <div class="form__item">
-                                <label for="100-250">
-                                    <span class="value">100.000 – 250.000 рублей</span>
-                                    <input id="100-250" name="price" type="radio" value="100.000–250.000 рублей">
+                                <label for="60-250">
+                                    <span class="value">60.000 – 250.000 рублей</span>
+                                    <input id="60-250" name="price" type="radio" value="60.000–250.000 рублей">
                                     <span class="checkbox"></span>
                                 </label>
                             </div>
