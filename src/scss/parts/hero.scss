@@ -1,6 +1,6 @@
 .hero {
     @include adaptive-value("margin-bottom", 100, 50, 1);
-
+    position: relative;
     &.mb-0 {
         margin-bottom: 0 !important;
     }
