@@ -237,6 +237,12 @@
     }
 }
 
+.service-page {
+    .service-card__descr {
+        margin-top: 0 !important;
+    }
+}
+
 .dprofile {
     background-color: $black;
     height: 100vh;
