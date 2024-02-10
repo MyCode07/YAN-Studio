@@ -43,7 +43,7 @@
                 grid-column: span 12;
             }
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 height: auto;
                 padding-bottom: 70%;
             }
@@ -63,7 +63,7 @@
                 grid-column: span 12;
             }
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 height: auto;
                 padding-bottom: 100%;
 
@@ -79,7 +79,7 @@
                 grid-column: span 6;
             }
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 height: auto;
                 padding-bottom: 63%;
             }
@@ -92,7 +92,7 @@
                 grid-column: span 12;
             }
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 height: auto;
                 padding-bottom: 60%;
             }
@@ -105,7 +105,7 @@
                 grid-column: span 6;
             }
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 height: auto;
                 padding-bottom: 80%;
             }
@@ -114,7 +114,7 @@
         & > :nth-child(6) {
             grid-column: span 12;
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 height: auto;
                 padding-bottom: 75%;
             }
@@ -127,7 +127,7 @@
                 grid-column: span 8;
             }
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 height: auto;
                 padding-bottom: 70%;
 
@@ -144,7 +144,7 @@
                 grid-column: span 4;
             }
 
-            .protfolio-card__img {
+            .portfolio-card__img {
                 padding-bottom: 70%;
                 height: auto;
             }
@@ -155,7 +155,7 @@
         //         grid-column: span 12;
         //     }
 
-        //     .protfolio-card__img {
+        //     .portfolio-card__img {
         //         height: auto;
         //         padding-bottom: 80%;
         //     }
@@ -163,21 +163,21 @@
 
         // & > :nth-child(10) {
         //     grid-column: span 6;
-        //     .protfolio-card__img {
+        //     .portfolio-card__img {
         //         padding-bottom: 70%;
         //         height: auto;
         //     }
         // }
 
         // & > :nth-child(11) {
-        //     .protfolio-card__img {
+        //     .portfolio-card__img {
         //         padding-bottom: 50%;
         //         height: auto;
         //     }
         // }
 
         // & > :nth-child(12) {
-        //     .protfolio-card__img {
+        //     .portfolio-card__img {
         //         padding-bottom: 100%;
         //         height: auto;
         //     }
@@ -191,7 +191,7 @@
         // & > :nth-child(13) {
         //     grid-column: span 8;
 
-        //     .protfolio-card__img {
+        //     .portfolio-card__img {
         //         height: auto;
         //         padding-bottom: 100%;
 
@@ -203,7 +203,7 @@
 
         // & > :nth-child(14) {
         //     grid-column: span 4;
-        //     .protfolio-card__img {
+        //     .portfolio-card__img {
         //         padding-bottom: 120%;
         //         height: auto;
 
@@ -214,7 +214,7 @@
         // }
 
         @media (max-width: 768px) {
-            .protfolio-card {
+            .portfolio-card {
                 grid-column: span 12;
 
                 &__img {
