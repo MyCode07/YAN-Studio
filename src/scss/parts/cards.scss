@@ -19,7 +19,7 @@
         position: relative;
         pointer-events: none;
         height: 90vh;
-        
+
         @media (max-width: 992px) {
             height: 70vh;
         }
@@ -736,5 +736,81 @@
     }
 
     a {
+    }
+}
+
+.services-item {
+    cursor: pointer;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba($color: $black, $alpha: 0.1);
+    position: relative;
+    counter-increment: count-services;
+
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 50%;
+        width: 100vw;
+        transform: translate(-50%, 0);
+        height: 100%;
+        max-height: 0;
+        pointer-events: none;
+        transition: max-height 0.3s ease 0s;
+        background-color: $black;
+        z-index: -1;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            &:after {
+                max-height: 100%;
+            }
+
+            span,
+            h4,
+            svg {
+                color: $white;
+                fill: $white;
+            }
+        }
+    }
+
+    span {
+        pointer-events: none;
+        font-family: JetBrainsMono;
+        font-size: 12px;
+        transition: color 0.3s ease 0s;
+
+        &:before {
+            content: "/ 0" counter(count-services);
+        }
+
+        @media (max-width: 992px) {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    h4 {
+        transition: color 0.3s ease 0s;
+
+        @media (max-width: 375px) {
+            font-size: 16px;
+        }
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        img,
+        svg {
+            @include adaptive-value("width", 50, 30, 1);
+            flex: 0 0 auto;
+            transition: fill 0.3s ease 0s;
+        }
     }
 }
