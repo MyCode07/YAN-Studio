@@ -32,60 +32,7 @@
             gap: 50px 16px;
         }
 
-        & > :first-child {
-            grid-column: span 6;
-
-            @media (max-width: 1024px) {
-                grid-column: span 8;
-            }
-
-            @media (max-width: 768px) {
-                grid-column: span 12;
-            }
-
-            .portfolio-card__img {
-                height: auto;
-                padding-bottom: 70%;
-            }
-        }
-
-        & > :nth-child(2),
-        & > :nth-child(3) {
-            grid-column: span 3;
-        }
-
-        & > :nth-child(2) {
-            @media (max-width: 1024px) {
-                grid-column: span 4;
-            }
-
-            @media (max-width: 768px) {
-                grid-column: span 12;
-            }
-
-            .portfolio-card__img {
-                height: auto;
-                padding-bottom: 100%;
-
-                @media (max-width: 768px) {
-                    padding-bottom: 70%;
-                }
-            }
-        }
-
-        & > :nth-child(3) {
-            @media (max-width: 1024px) {
-                grid-row-start: 3;
-                grid-column: span 6;
-            }
-
-            .portfolio-card__img {
-                height: auto;
-                padding-bottom: 63%;
-            }
-        }
-
-        & > :nth-child(4) {
+        .grid-column-8 {
             grid-column: span 8;
 
             @media (max-width: 1024px) {
@@ -98,7 +45,7 @@
             }
         }
 
-        & > :nth-child(5) {
+        .grid-column-4 {
             grid-column: span 4;
 
             @media (max-width: 1024px) {
@@ -111,16 +58,29 @@
             }
         }
 
-        & > :nth-child(6) {
+        .grid-column-6 {
+            grid-column: span 6;
+
+            @media (max-width: 1024px) {
+                grid-column: span 3;
+            }
+
+            .portfolio-card__img {
+                height: auto;
+                padding-bottom: 80%;
+            }
+        }
+
+        .grid-column-12 {
             grid-column: span 12;
 
             .portfolio-card__img {
                 height: auto;
-                padding-bottom: 75%;
+                padding-bottom: 50%;
             }
         }
 
-        & > :nth-child(7) {
+        .grid-column-3 {
             grid-column: span 3;
 
             @media (max-width: 1024px) {
@@ -129,7 +89,7 @@
 
             .portfolio-card__img {
                 height: auto;
-                padding-bottom: 70%;
+                padding-bottom: 80%;
 
                 @media (max-width: 1024px) {
                     grid-column: span 8;
@@ -137,7 +97,7 @@
             }
         }
 
-        & > :nth-child(8) {
+        .grid-column-9 {
             grid-column: span 9;
 
             @media (max-width: 1024px) {
@@ -150,69 +110,6 @@
             }
         }
 
-        // & > :nth-child(9) {
-        //     @media (max-width: 1024px) {
-        //         grid-column: span 12;
-        //     }
-
-        //     .portfolio-card__img {
-        //         height: auto;
-        //         padding-bottom: 80%;
-        //     }
-        // }
-
-        // & > :nth-child(10) {
-        //     grid-column: span 6;
-        //     .portfolio-card__img {
-        //         padding-bottom: 70%;
-        //         height: auto;
-        //     }
-        // }
-
-        // & > :nth-child(11) {
-        //     .portfolio-card__img {
-        //         padding-bottom: 50%;
-        //         height: auto;
-        //     }
-        // }
-
-        // & > :nth-child(12) {
-        //     .portfolio-card__img {
-        //         padding-bottom: 100%;
-        //         height: auto;
-        //     }
-        // }
-
-        // & > :nth-child(11),
-        // & > :nth-child(12) {
-        //     grid-column: span 3;
-        // }
-
-        // & > :nth-child(13) {
-        //     grid-column: span 8;
-
-        //     .portfolio-card__img {
-        //         height: auto;
-        //         padding-bottom: 100%;
-
-        //         @media (max-width: 768px) {
-        //             padding-bottom: 70%;
-        //         }
-        //     }
-        // }
-
-        // & > :nth-child(14) {
-        //     grid-column: span 4;
-        //     .portfolio-card__img {
-        //         padding-bottom: 120%;
-        //         height: auto;
-
-        //         @media (max-width: 768px) {
-        //             padding-bottom: 70%;
-        //         }
-        //     }
-        // }
-
         @media (max-width: 768px) {
             .portfolio-card {
                 grid-column: span 12;
@@ -221,6 +118,12 @@
                     height: auto;
                     padding-bottom: 80%;
                 }
+            }
+        }
+
+        .grid-item-height-60 {
+            .portfolio-card__img {
+                padding-bottom: 50%;
             }
         }
     }
