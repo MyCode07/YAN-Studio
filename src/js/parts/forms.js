@@ -44,15 +44,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // заявка
                         ym(93665255, 'reachGoal', 'zayavka');
+                        resetForm()
                     }
                     else {
                         failMessage(form)
                         form.classList.remove('_sending');
                         hideLoader();
+                        resetForm()
                     }
                 }
                 else {
                     form.classList.remove('_sending');
+                    resetForm()
                 }
             })
 
@@ -220,13 +223,38 @@ document.addEventListener('DOMContentLoaded', function () {
         laoder.classList.add('_open')
     }
 
+    function resetForm() {
+        if (formFile) {
+            const fileElem = formFile.closest('.form__item')
+            const fileNameElem = fileElem.querySelector('.filename');
+            const deleteFileElem = fileElem.querySelector('._delete-file');
+
+            fileNameElem.innerHTML = '+ Прикрепить файл';
+            formFile.value = '';
+
+            deleteFileElem.style.display = 'none';
+            deleteFileElem.classList.remove('_active');
+        }
+    }
+
     const formFile = document.querySelector('input[name="file"]');
     if (formFile) {
+        const fileElem = formFile.closest('.form__item')
+        const fileNameElem = fileElem.querySelector('.filename');
+        const deleteFileElem = fileElem.querySelector('._delete-file');
+
         formFile.addEventListener('change', () => {
             if (formFile.files[0]) {
                 uploadFile(formFile.files[0]);
             }
         });
+
+        deleteFileElem.addEventListener('click', () => {
+            fileNameElem.innerHTML = '+ Прикрепить файл';
+            formFile.value = '';
+
+            deleteFileElem.classList.remove('_active');
+        })
 
         function uploadFile(file) {
 
@@ -236,16 +264,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 formFile.value = '';
                 return;
             }
-            if (file.size > 20 * (1024 * 1024)) {
-                alert('Файл должен быть менее 20 МБ.');
+            if (file.size > 2 * (1024 * 1024)) {
+                alert('Файл должен быть менее 2 МБ.');
                 return;
             }
 
             var reader = new FileReader();
 
             reader.onload = function (e) {
-                document.querySelector('.filename').innerHTML = file.name;
-                document.querySelector('._delete-file').classList.add('_active');
+                fileNameElem.innerHTML = file.name;
+                deleteFileElem.classList.add('_active');
             };
 
             reader.onerror = function (e) {
