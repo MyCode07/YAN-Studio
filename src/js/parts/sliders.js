@@ -27,6 +27,19 @@ if (sliders.length) {
                 }
             })
         }
+
+        if (slider.closest('.cases')) {
+            new Swiper(slider, {
+                modules: [Pagination],
+                slidesPerView: 'auto',
+                pagination: {
+                    el: pagination,
+                    clickable: true,
+                },
+                spaceBetween: 16,
+            })
+        }
+
     })
 }
 

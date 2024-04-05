@@ -19,6 +19,15 @@
         }
     }
 
+    &-3 {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+
     &-12 {
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: auto;

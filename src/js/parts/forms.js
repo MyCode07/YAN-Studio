@@ -283,6 +283,24 @@ document.addEventListener('DOMContentLoaded', function () {
             reader.readAsDataURL(file);
         }
     }
+
+    const telegramInput = document.querySelector('input[name="telegram"]');
+    const contactCheckboxes = document.querySelectorAll('#conn-type input');
+    if (contactCheckboxes.length) {
+        contactCheckboxes.forEach(input => {
+            input.addEventListener('change', () => {
+                if (input.id === 'contact-tg' && input.checked) {
+                    telegramInput.setAttribute('placeholder', 'Telegram *')
+                    telegramInput.closest('.form__item').setAttribute('data-required', true)
+                }
+                else {
+                    telegramInput.setAttribute('placeholder', 'Telegram')
+                    telegramInput.closest('.form__item').removeAttribute('data-required')
+                    telegramInput.closest('.form__item').classList.remove('_error')
+                }
+            })
+        })
+    }
 });
 
 function checkCheckBoxes(form) {
