@@ -2,6 +2,8 @@
     display: grid;
     grid-template-rows: auto;
 
+    // .grid-4
+
     &-4 {
         grid-template-columns: repeat(4, 1fr);
 
@@ -9,6 +11,8 @@
             display: block;
         }
     }
+
+    // .grid-2
 
     &-2 {
         grid-template-columns: repeat(2, 1fr);
@@ -19,6 +23,8 @@
         }
     }
 
+    // .grid-3
+
     &-3 {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto;
@@ -27,6 +33,8 @@
             display: block;
         }
     }
+
+    // .grid-12
 
     &-12 {
         grid-template-columns: repeat(12, 1fr);
@@ -133,6 +141,21 @@
         .grid-item-height-60 {
             .portfolio-card__img {
                 padding-bottom: 50%;
+            }
+        }
+    }
+
+    //  .grid-left
+
+    &-left {
+        @media (max-width: 1024px) {
+            display: block;
+        }
+
+        .width-50 {
+            @media (max-width: 1024px) and (min-width: 769px) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     }
