@@ -52,6 +52,10 @@
     }
 
     .section__bottom {
+        @media (max-width: 1024px) {
+            display: block;
+        }
+
         div {
             display: flex;
             flex-direction: column;
@@ -60,21 +64,48 @@
         }
     }
 
+    p {
+        @media (min-width: 769px) {
+            width: 75%;
+        }
+    }
+
     .big-text {
         margin-bottom: 20px;
+
+        @media (min-width: 1201px) {
+            max-width: 90%;
+        }
     }
 
     span {
         grid-column: span 2;
     }
 
-    p {
-        @include adaptive-value("font-size", 26, 14, 1);
-        line-height: 1.3;
+    .text-small {
+        max-width: 50%;
+        display: block;
+
+        @media (max-width: 768px) {
+            max-width: 355px;
+        }
+    }
+
+    .section__bottom .about-price {
+        gap: 10px;
+    }
+
+    .about-price__order {
+        width: 100%;
+
+        @include adaptive-value("padding-top", 100, 50, 1);
 
         @media (min-width: 769px) {
-            width: 75%;
-            letter-spacing: -1px;
+            margin-bottom: -30px;
+        }
+
+        @media (max-width: 1024px) {
+            max-width: 530px;
         }
     }
 
